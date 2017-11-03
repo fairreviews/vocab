@@ -1,0 +1,772 @@
+<https://w3id.org/fr/def/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/fr/def/core#> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/datacite/> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/creator> <https://w3id.org/people/idafensp> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/creator> <https://w3id.org/people/mpoveda> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/publisher> <http://www.oeg-upm.net/> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/created> "2017-09-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/issued> "2017-11-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/modified> "2017-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#" .
+<https://w3id.org/fr/def/core#> <http://www.w3.org/2000/01/rdf-schema#comment> "This vocabulary represents scientific reviews. This model is used to annotate http://fairreviews.linkeddata.es/ data."@en .
+<https://w3id.org/fr/def/core#> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/creator> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/dc/terms/Agent> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/date> .
+<http://purl.org/dc/terms/issued> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/language> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/language> .
+<http://purl.org/dc/terms/language> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/dc/terms/LinguisticSystem> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/rights> .
+<http://purl.org/dc/terms/license> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/dc/terms/LicenseDocument> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/elements/1.1/date> .
+<http://purl.org/dc/terms/modified> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#closeMatch
+<http://www.w3.org/2004/02/skos/core#closeMatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/fr/def/core#hasConfidence
+<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "relation between a review author and the confidence about the review topic" .
+<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/2000/01/rdf-schema#label> "has confidence"@en .
+# 
+# https://w3id.org/fr/def/core#hasRating
+<https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a review and a given rating assigned by a reviewer."@en .
+<https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/2000/01/rdf-schema#label> "has rating"@en .
+# 
+# https://w3id.org/fr/def/core#hasReview
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/fr/def/core#isReviewOf> .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Expression> .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a scientific contribution and the reviews issued for it."@en .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#label> "has review"@en .
+# 
+# https://w3id.org/fr/def/core#isReplyTo
+<https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Endeavour> .
+<https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/fabio/Endeavour> .
+<https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a given endeavour and the endeavour that it is replying to. For example, the relation between a reply and a given review."@en .
+<https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/2000/01/rdf-schema#label> "is reply to"@en .
+# 
+# https://w3id.org/fr/def/core#isReviewOf
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/fabio/Expression> .
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a review and the scientific contribution that is subject of the review."@en .
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#label> "is review of"@en .
+# 
+# https://w3id.org/fr/def/core#issuedAt
+<https://w3id.org/fr/def/core#issuedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#issuedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#issuedAt> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#TrackingSystem> .
+<https://w3id.org/fr/def/core#issuedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a review and the tracking or scholarly venue management system where the reviewing process took place."@en .
+<https://w3id.org/fr/def/core#issuedAt> <http://www.w3.org/2000/01/rdf-schema#label> "issued at"@en .
+# 
+# https://w3id.org/fr/def/core#issuedFor
+<https://w3id.org/fr/def/core#issuedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#issuedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#issuedFor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#ConveningOrganization> .
+<https://w3id.org/fr/def/core#issuedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review)."@en .
+<https://w3id.org/fr/def/core#issuedFor> <http://www.w3.org/2000/01/rdf-schema#label> "issued for"@en .
+# 
+# https://w3id.org/fr/def/core#releasedBy
+<https://w3id.org/fr/def/core#releasedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#releasedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#releasedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/fr/def/core#releasedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to."@en .
+<https://w3id.org/fr/def/core#releasedBy> <http://www.w3.org/2000/01/rdf-schema#label> "released by"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://purl.org/spar/fabio/hasURL
+<http://purl.org/spar/fabio/hasURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/spar/fabio/hasURL> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Endeavour> .
+<http://purl.org/spar/fabio/hasURL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# https://w3id.org/fr/def/core#confidenceValue
+<https://w3id.org/fr/def/core#confidenceValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/fr/def/core#confidenceValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#confidenceValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/fr/def/core#confidenceValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Confidence value of expertise in the review topic given by the reviwer"@en .
+<https://w3id.org/fr/def/core#confidenceValue> <http://www.w3.org/2000/01/rdf-schema#label> "confidence value"@en .
+# 
+# https://w3id.org/fr/def/core#content
+<https://w3id.org/fr/def/core#content> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/fr/def/core#content> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Work> .
+<https://w3id.org/fr/def/core#content> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/fr/def/core#content> <http://www.w3.org/2000/01/rdf-schema#comment> "Content of the review."@en .
+<https://w3id.org/fr/def/core#content> <http://www.w3.org/2000/01/rdf-schema#label> "content"@en .
+# 
+# https://w3id.org/fr/def/core#ratingValue
+<https://w3id.org/fr/def/core#ratingValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/fr/def/core#ratingValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#ratingValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/fr/def/core#ratingValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Numerical value of the rating given to a review."@en .
+<https://w3id.org/fr/def/core#ratingValue> <http://www.w3.org/2000/01/rdf-schema#label> "rating value"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://lexvo.org/ontology#Language
+<http://lexvo.org/ontology#Language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://lexvo.org/ontology#Language> <http://www.w3.org/2000/01/rdf-schema#comment> "Language of the scientific contribution (paper, review, etc.)."@en .
+<http://lexvo.org/ontology#Language> <http://www.w3.org/2000/01/rdf-schema#label> "Language"@en .
+# 
+# http://purl.org/dc/terms/Agent
+<http://purl.org/dc/terms/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spar/bido/ScholarlyVenueManagementSystem
+<http://purl.org/spar/bido/ScholarlyVenueManagementSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spar/datacite/Identifier
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "Un identificador que identifica de forma \u00FAnica a una entidad - tal como una agencia de financiaci\u00F3n, una persona y un recurso - que pertenece a un esquema particular, como los especificados por individuos de la clase datacite:IdentifierScheme."@es .
+<http://purl.org/spar/datacite/Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identificador"@es .
+# 
+# http://purl.org/spar/fabio/Endeavour
+<http://purl.org/spar/fabio/Endeavour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spar/fabio/Expression
+<http://purl.org/spar/fabio/Expression> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Expression> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Endeavour> .
+# 
+# http://purl.org/spar/fabio/Reply
+<http://purl.org/spar/fabio/Reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Work> .
+# 
+# http://purl.org/spar/fabio/Review
+<http://purl.org/spar/fabio/Review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Work> .
+# 
+# http://purl.org/spar/fabio/Work
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spar/fabio/Work> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Endeavour> .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/odrl/2/Policy
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/2000/01/rdf-schema#comment> "A non-empty group of Permissions and/or Prohibitions."@en .
+<http://www.w3.org/ns/odrl/2/Policy> <http://www.w3.org/2000/01/rdf-schema#label> "Policy"@en .
+# 
+# http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Agent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+# 
+# http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<http://xmlns.com/foaf/0.1/Person> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://xmlns.com/foaf/0.1/> .
+# 
+# https://w3id.org/fr/def/core#ConfidenceConcept
+<https://w3id.org/fr/def/core#ConfidenceConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#ConfidenceConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/fr/def/core#ConfidenceConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "The set of values of a given confidence scale."@en .
+<https://w3id.org/fr/def/core#ConfidenceConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Confidence concept"@en .
+# 
+# https://w3id.org/fr/def/core#ConfidenceConceptScheme
+<https://w3id.org/fr/def/core#ConfidenceConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#ConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://w3id.org/fr/def/core#ConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A scale defining the confidence of a reviewer for a given topic."@en .
+<https://w3id.org/fr/def/core#ConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Confidence concept scheme"@en .
+# 
+# https://w3id.org/fr/def/core#ConveningOrganization
+<https://w3id.org/fr/def/core#ConveningOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#ConveningOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/fr/def/core#ConveningOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions."@en .
+<https://w3id.org/fr/def/core#ConveningOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Convening organization"@en .
+# 
+# https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme
+<https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/fr/def/core#ConfidenceConceptScheme> .
+<https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A discrete scale defining the confidence of a reviewer for a given topic."@en .
+<https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Discrete confidence concept scheme"@en .
+# 
+# https://w3id.org/fr/def/core#DiscreteRatingConceptScheme
+<https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/fr/def/core#RatingConceptScheme> .
+<https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A discrete scale defining the rating given by a reviewer for a specific scientific contribution."@en .
+<https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Discrete rating concept scheme"@en .
+# 
+# https://w3id.org/fr/def/core#RatingConcept
+<https://w3id.org/fr/def/core#RatingConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#RatingConcept> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://w3id.org/fr/def/core#RatingConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "The set of values of a given rating scale."@en .
+<https://w3id.org/fr/def/core#RatingConcept> <http://www.w3.org/2000/01/rdf-schema#label> "Rating concept"@en .
+# 
+# https://w3id.org/fr/def/core#RatingConceptScheme
+<https://w3id.org/fr/def/core#RatingConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#RatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://w3id.org/fr/def/core#RatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A scale defining the rating given by a reviewer for a specific scientific contribution."@en .
+<https://w3id.org/fr/def/core#RatingConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Rating concept scheme"@en .
+# 
+# https://w3id.org/fr/def/core#Reply
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Reply> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/language> .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://lexvo.org/ontology#Language> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/issued> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/modified> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#comment> "A reply to a review or another endeavour."@en .
+<https://w3id.org/fr/def/core#Reply> <http://www.w3.org/2000/01/rdf-schema#label> "Reply"@en .
+# 
+# https://w3id.org/fr/def/core#Review
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/fabio/Review> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/language> .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://lexvo.org/ontology#Language> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/license> .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/odrl/2/Policy> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/issued> .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/modified> .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#comment> "A review of a scientific contribution."@en .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#label> "Review"@en .
+# 
+# https://w3id.org/fr/def/core#TrackingSystem
+<https://w3id.org/fr/def/core#TrackingSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/fr/def/core#TrackingSystem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spar/bido/ScholarlyVenueManagementSystem> .
+<https://w3id.org/fr/def/core#TrackingSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "The platform where the review process takes place."@en .
+<https://w3id.org/fr/def/core#TrackingSystem> <http://www.w3.org/2000/01/rdf-schema#label> "Tracking system"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/NET/rdflicense/cc-by4.0
+<http://purl.org/NET/rdflicense/cc-by4.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# https://w3id.org/fr/def/core#
+<https://w3id.org/fr/def/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+# 
+# https://w3id.org/fr/def/core#A-NA-WR
+<https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from Approved to Not Approved, including Aprproved With Reservations, "@en .
+# 
+# https://w3id.org/fr/def/core#A-NA-WR-APP
+<https://w3id.org/fr/def/core#A-NA-WR-APP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-NA-WR-APP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-NA-WR-APP> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> .
+<https://w3id.org/fr/def/core#A-NA-WR-APP> <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved"@en .
+# 
+# https://w3id.org/fr/def/core#A-NA-WR-APPWR
+<https://w3id.org/fr/def/core#A-NA-WR-APPWR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-NA-WR-APPWR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-NA-WR-APPWR> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> .
+<https://w3id.org/fr/def/core#A-NA-WR-APPWR> <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved with reservations"@en .
+# 
+# https://w3id.org/fr/def/core#A-NA-WR-NAPP
+<https://w3id.org/fr/def/core#A-NA-WR-NAPP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-NA-WR-NAPP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-NA-WR-NAPP> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> .
+<https://w3id.org/fr/def/core#A-NA-WR-NAPP> <http://www.w3.org/2004/02/skos/core#prefLabel> "Not approved"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS
+<https://w3id.org/fr/def/core#A-R-TS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#A-R-TS> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from Accept to Reject, including pre-screening and two strikes rule"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-ACC
+<https://w3id.org/fr/def/core#A-R-TS-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-ACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-ACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-MAJREV
+<https://w3id.org/fr/def/core#A-R-TS-MAJREV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-MAJREV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-MAJREV> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-MAJREV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Major revision"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-MINREV
+<https://w3id.org/fr/def/core#A-R-TS-MINREV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-MINREV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-MINREV> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-MINREV> <http://www.w3.org/2004/02/skos/core#prefLabel> "Minor revision"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-REJ
+<https://w3id.org/fr/def/core#A-R-TS-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-REJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-REJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-REJPS
+<https://w3id.org/fr/def/core#A-R-TS-REJPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-REJPS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-REJPS> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-REJPS> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Pre-Screening)"@en .
+# 
+# https://w3id.org/fr/def/core#A-R-TS-REJTS
+<https://w3id.org/fr/def/core#A-R-TS-REJTS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#A-R-TS-REJTS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#A-R-TS-REJTS> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> .
+<https://w3id.org/fr/def/core#A-R-TS-REJTS> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Two Strikes)"@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5
+<https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> .
+<https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from 1 to 5, used by Association for Computational Linguistics anual meetings"@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5-ACL1
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <https://w3id.org/fr/def/core#confidenceValue> "1" .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Not my area, or paper is very hard to understand. My evaluation is just an educated guess."@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5-ACL2
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <https://w3id.org/fr/def/core#confidenceValue> "2" .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Willing to defend my evaluation, but it is fairly likely that I missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5-ACL3
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <https://w3id.org/fr/def/core#confidenceValue> "3" .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Pretty sure, but there's a chance I missed something. Although I have a good feel for this area in general, I did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5-ACL4
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <https://w3id.org/fr/def/core#confidenceValue> "4" .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#prefLabel> "Quite sure. I tried to check the important points carefully. It's unlikely, though conceivable, that I missed something that should affect my ratings. "@en .
+# 
+# https://w3id.org/fr/def/core#ACL-1-5-ACL5
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <https://w3id.org/fr/def/core#confidenceValue> "5" .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Positive that my evaluation is correct. I read the paper very carefully and am familiar with related work. "@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10
+<https://w3id.org/fr/def/core#DIS-0-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#DIS-0-10> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from 0 to 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-0
+<https://w3id.org/fr/def/core#DIS-0-10-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-0> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-0> <https://w3id.org/fr/def/core#ratingValue> "0"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-0> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-1
+<https://w3id.org/fr/def/core#DIS-0-10-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-1> <https://w3id.org/fr/def/core#ratingValue> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-1> <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-10
+<https://w3id.org/fr/def/core#DIS-0-10-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-10> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-10> <https://w3id.org/fr/def/core#ratingValue> "10"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-10> <http://www.w3.org/2004/02/skos/core#prefLabel> "10 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-2
+<https://w3id.org/fr/def/core#DIS-0-10-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-2> <https://w3id.org/fr/def/core#ratingValue> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-2> <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-3
+<https://w3id.org/fr/def/core#DIS-0-10-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-3> <https://w3id.org/fr/def/core#ratingValue> "3"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-3> <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-4
+<https://w3id.org/fr/def/core#DIS-0-10-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-4> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-4> <https://w3id.org/fr/def/core#ratingValue> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-4> <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-5
+<https://w3id.org/fr/def/core#DIS-0-10-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-5> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-5> <https://w3id.org/fr/def/core#ratingValue> "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-5> <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-6
+<https://w3id.org/fr/def/core#DIS-0-10-6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-6> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-6> <https://w3id.org/fr/def/core#ratingValue> "6"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-6> <http://www.w3.org/2004/02/skos/core#prefLabel> "6 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-7
+<https://w3id.org/fr/def/core#DIS-0-10-7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-7> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-7> <https://w3id.org/fr/def/core#ratingValue> "7"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-7> <http://www.w3.org/2004/02/skos/core#prefLabel> "7 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-8
+<https://w3id.org/fr/def/core#DIS-0-10-8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-8> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-8> <https://w3id.org/fr/def/core#ratingValue> "8"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-8> <http://www.w3.org/2004/02/skos/core#prefLabel> "8 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-10-9
+<https://w3id.org/fr/def/core#DIS-0-10-9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-10-9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-10-9> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> .
+<https://w3id.org/fr/def/core#DIS-0-10-9> <https://w3id.org/fr/def/core#ratingValue> "9"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-10-9> <http://www.w3.org/2004/02/skos/core#prefLabel> "9 out of 10"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5
+<https://w3id.org/fr/def/core#DIS-0-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#DIS-0-5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from 0 to 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-0
+<https://w3id.org/fr/def/core#DIS-0-5-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-0> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-0> <https://w3id.org/fr/def/core#ratingValue> "0"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-0> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-1
+<https://w3id.org/fr/def/core#DIS-0-5-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-1> <https://w3id.org/fr/def/core#ratingValue> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-1> <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-2
+<https://w3id.org/fr/def/core#DIS-0-5-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-2> <https://w3id.org/fr/def/core#ratingValue> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-2> <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-3
+<https://w3id.org/fr/def/core#DIS-0-5-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-3> <https://w3id.org/fr/def/core#ratingValue> "3"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-3> <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-4
+<https://w3id.org/fr/def/core#DIS-0-5-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-4> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-4> <https://w3id.org/fr/def/core#ratingValue> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-4> <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-0-5-5
+<https://w3id.org/fr/def/core#DIS-0-5-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-0-5-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-0-5-5> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> .
+<https://w3id.org/fr/def/core#DIS-0-5-5> <https://w3id.org/fr/def/core#ratingValue> "5"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-0-5-5> <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2
+<https://w3id.org/fr/def/core#DIS-N2-P2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#DIS-N2-P2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from -2 to 2, including 0"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2-0
+<https://w3id.org/fr/def/core#DIS-N2-P2-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-0> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-0> <https://w3id.org/fr/def/core#ratingValue> "0"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-0> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 on a [-2,2] scale"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2-NEG1
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> <https://w3id.org/fr/def/core#ratingValue> "-1"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> <http://www.w3.org/2004/02/skos/core#prefLabel> "-1 on a [-2,2] scale"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2-NEG2
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> <https://w3id.org/fr/def/core#ratingValue> "-2"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> <http://www.w3.org/2004/02/skos/core#prefLabel> "-2 on a [-2,2] scale"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2-POS1
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> <https://w3id.org/fr/def/core#ratingValue> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> <http://www.w3.org/2004/02/skos/core#prefLabel> "1 on a [-2,2] scale"@en .
+# 
+# https://w3id.org/fr/def/core#DIS-N2-P2-POS2
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> <https://w3id.org/fr/def/core#ratingValue> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
+<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> <http://www.w3.org/2004/02/skos/core#prefLabel> "2 on a [-2,2] scale"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL
+<https://w3id.org/fr/def/core#EX-NULL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> .
+<https://w3id.org/fr/def/core#EX-NULL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from Expert to Null, also representend in an scale from 4 to 0"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL-EXP
+<https://w3id.org/fr/def/core#EX-NULL-EXP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL-EXP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#EX-NULL-EXP> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> .
+<https://w3id.org/fr/def/core#EX-NULL-EXP> <https://w3id.org/fr/def/core#confidenceValue> "4" .
+<https://w3id.org/fr/def/core#EX-NULL-EXP> <http://www.w3.org/2004/02/skos/core#prefLabel> "Expert"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL-HIGH
+<https://w3id.org/fr/def/core#EX-NULL-HIGH> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL-HIGH> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#EX-NULL-HIGH> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> .
+<https://w3id.org/fr/def/core#EX-NULL-HIGH> <https://w3id.org/fr/def/core#confidenceValue> "3" .
+<https://w3id.org/fr/def/core#EX-NULL-HIGH> <http://www.w3.org/2004/02/skos/core#prefLabel> "High"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL-LOW
+<https://w3id.org/fr/def/core#EX-NULL-LOW> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL-LOW> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#EX-NULL-LOW> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> .
+<https://w3id.org/fr/def/core#EX-NULL-LOW> <https://w3id.org/fr/def/core#confidenceValue> "1" .
+<https://w3id.org/fr/def/core#EX-NULL-LOW> <http://www.w3.org/2004/02/skos/core#prefLabel> "Low"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL-MED
+<https://w3id.org/fr/def/core#EX-NULL-MED> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL-MED> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#EX-NULL-MED> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> .
+<https://w3id.org/fr/def/core#EX-NULL-MED> <https://w3id.org/fr/def/core#confidenceValue> "2" .
+<https://w3id.org/fr/def/core#EX-NULL-MED> <http://www.w3.org/2004/02/skos/core#prefLabel> "Medium"@en .
+# 
+# https://w3id.org/fr/def/core#EX-NULL-NULL
+<https://w3id.org/fr/def/core#EX-NULL-NULL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#EX-NULL-NULL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#EX-NULL-NULL> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> .
+<https://w3id.org/fr/def/core#EX-NULL-NULL> <https://w3id.org/fr/def/core#confidenceValue> "0" .
+<https://w3id.org/fr/def/core#EX-NULL-NULL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Null"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL
+<https://w3id.org/fr/def/core#SA-SR-BL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#SA-SR-BL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from Strong Reject to Strong Accept, including Bordeline"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-ACC
+<https://w3id.org/fr/def/core#SA-SR-BL-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-ACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-ACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-BDL
+<https://w3id.org/fr/def/core#SA-SR-BL-BDL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-BDL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-BDL> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-BDL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Borderline"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-REJ
+<https://w3id.org/fr/def/core#SA-SR-BL-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-REJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-REJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-SACC
+<https://w3id.org/fr/def/core#SA-SR-BL-SACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-SREJ
+<https://w3id.org/fr/def/core#SA-SR-BL-SREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SREJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-SREJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-WACC
+<https://w3id.org/fr/def/core#SA-SR-BL-WACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-BL-WREJ
+<https://w3id.org/fr/def/core#SA-SR-BL-WREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WREJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> .
+<https://w3id.org/fr/def/core#SA-SR-BL-WREJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB
+<https://w3id.org/fr/def/core#SA-SR-NB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> .
+<https://w3id.org/fr/def/core#SA-SR-NB> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete scale from Strong Reject to Strong Accept, excluding Bordeline"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-ACC
+<https://w3id.org/fr/def/core#SA-SR-NB-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-ACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-ACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-ACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-REJ
+<https://w3id.org/fr/def/core#SA-SR-NB-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-REJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-REJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-REJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-SACC
+<https://w3id.org/fr/def/core#SA-SR-NB-SACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-SREJ
+<https://w3id.org/fr/def/core#SA-SR-NB-SREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SREJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-SREJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-WACC
+<https://w3id.org/fr/def/core#SA-SR-NB-WACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WACC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WACC> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WACC> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"@en .
+# 
+# https://w3id.org/fr/def/core#SA-SR-NB-WREJ
+<https://w3id.org/fr/def/core#SA-SR-NB-WREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WREJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConcept> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WREJ> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> .
+<https://w3id.org/fr/def/core#SA-SR-NB-WREJ> <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"@en .
+# 
+# https://w3id.org/fr/def/core#0To10Continuos
+<https://w3id.org/fr/def/core#0To10Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#0To10Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConceptScheme> .
+<https://w3id.org/fr/def/core#0To10Continuos> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 10 continuos"@en .
+# 
+# https://w3id.org/fr/def/core#0To15Continuos
+<https://w3id.org/fr/def/core#0To15Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#0To15Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConceptScheme> .
+<https://w3id.org/fr/def/core#0To15Continuos> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 15 continuos"@en .
+# 
+# https://w3id.org/fr/def/core#0To5Continuos
+<https://w3id.org/fr/def/core#0To5Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#0To5Continuos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#RatingConceptScheme> .
+<https://w3id.org/fr/def/core#0To5Continuos> <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 5 continuos"@en .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

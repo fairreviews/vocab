@@ -1,0 +1,185 @@
+{
+  "@context" : {
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "created" : {
+      "@id" : "http://purl.org/dc/terms/created"
+    },
+    "hasRating" : {
+      "@id" : "https://w3id.org/fr/def/core#hasRating",
+      "@type" : "@id"
+    },
+    "Review" : {
+      "@id" : "https://w3id.org/fr/def/core#Review"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "isReplyTo" : {
+      "@id" : "https://w3id.org/fr/def/core#isReplyTo",
+      "@type" : "@id"
+    },
+    "DiscreteConfidenceConceptScheme" : {
+      "@id" : "https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme"
+    },
+    "isReviewOf" : {
+      "@id" : "https://w3id.org/fr/def/core#isReviewOf",
+      "@type" : "@id"
+    },
+    "issuedFor" : {
+      "@id" : "https://w3id.org/fr/def/core#issuedFor",
+      "@type" : "@id"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/terms/issued",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "DiscreteRatingConceptScheme" : {
+      "@id" : "https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Endeavour" : {
+      "@id" : "http://purl.org/spar/fabio/Endeavour"
+    },
+    "Concept" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    "hasReview" : {
+      "@id" : "https://w3id.org/fr/def/core#hasReview",
+      "@type" : "@id"
+    },
+    "Expression" : {
+      "@id" : "http://purl.org/spar/fabio/Expression"
+    },
+    "LinguisticSystem" : {
+      "@id" : "http://purl.org/dc/terms/LinguisticSystem"
+    },
+    "hasURL" : {
+      "@id" : "http://purl.org/spar/fabio/hasURL",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Person" : {
+      "@id" : "http://xmlns.com/foaf/0.1/Person"
+    },
+    "closeMatch" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#closeMatch",
+      "@type" : "@id"
+    },
+    "Agent" : {
+      "@id" : "http://purl.org/dc/terms/Agent"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "TrackingSystem" : {
+      "@id" : "https://w3id.org/fr/def/core#TrackingSystem"
+    },
+    "confidenceValue" : {
+      "@id" : "https://w3id.org/fr/def/core#confidenceValue",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "ConveningOrganization" : {
+      "@id" : "https://w3id.org/fr/def/core#ConveningOrganization"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "Work" : {
+      "@id" : "http://purl.org/spar/fabio/Work"
+    },
+    "releasedBy" : {
+      "@id" : "https://w3id.org/fr/def/core#releasedBy",
+      "@type" : "@id"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "content" : {
+      "@id" : "https://w3id.org/fr/def/core#content",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Reply" : {
+      "@id" : "https://w3id.org/fr/def/core#Reply"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "ConfidenceConcept" : {
+      "@id" : "https://w3id.org/fr/def/core#ConfidenceConcept"
+    },
+    "ConceptScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    },
+    "ratingValue" : {
+      "@id" : "https://w3id.org/fr/def/core#ratingValue",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/elements/1.1/publisher"
+    },
+    "LicenseDocument" : {
+      "@id" : "http://purl.org/dc/terms/LicenseDocument"
+    },
+    "RatingConcept" : {
+      "@id" : "https://w3id.org/fr/def/core#RatingConcept"
+    },
+    "ScholarlyVenueManagementSystem" : {
+      "@id" : "http://purl.org/spar/bido/ScholarlyVenueManagementSystem"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified",
+      "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "Policy" : {
+      "@id" : "http://www.w3.org/ns/odrl/2/Policy"
+    },
+    "Language" : {
+      "@id" : "http://lexvo.org/ontology#Language"
+    },
+    "ConfidenceConceptScheme" : {
+      "@id" : "https://w3id.org/fr/def/core#ConfidenceConceptScheme"
+    },
+    "issuedAt" : {
+      "@id" : "https://w3id.org/fr/def/core#issuedAt",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "language" : {
+      "@id" : "http://purl.org/dc/terms/language",
+      "@type" : "@id"
+    },
+    "Identifier" : {
+      "@id" : "http://purl.org/spar/datacite/Identifier"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "inScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#inScheme",
+      "@type" : "@id"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "hasConfidence" : {
+      "@id" : "https://w3id.org/fr/def/core#hasConfidence",
+      "@type" : "@id"
+    },
+    "RatingConceptScheme" : {
+      "@id" : "https://w3id.org/fr/def/core#RatingConceptScheme"
+    }
+  }
+}
