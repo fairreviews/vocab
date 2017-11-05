@@ -34,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-11-03 16:39:24 +0000</string>
+	<string>2017-11-05 18:53:00 +0000</string>
 	<key>Modifier</key>
 	<string>María Poveda</string>
 	<key>NotesVisible</key>
@@ -590,6 +590,11 @@ ManagementSystem}</string>
 					</dict>
 					<key>ID</key>
 					<integer>42684</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#Reply</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -2625,6 +2630,16 @@ skos:ConceptScheme}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43049</integer>
+					<key>Link</key>
+					<dict>
+						<key>documentJump</key>
+						<dict>
+							<key>Type</key>
+							<integer>6</integer>
+							<key>Worksheet</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -4521,6 +4536,11 @@ dcterms:language}</string>
 					</dict>
 					<key>ID</key>
 					<integer>42677</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#Review</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -13741,6 +13761,8 @@ fr:RatingConceptScheme}</string>
 		<integer>0</integer>
 		<key>Expanded_Canvases</key>
 		<array/>
+		<key>Frame</key>
+		<string>{{16, 72}, {1208, 909}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -13750,7 +13772,7 @@ fr:RatingConceptScheme}</string>
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{-395, -137}, {1694, 1456}}</string>
+		<string>{{-209, -173}, {1322, 1528}}</string>
 		<key>Zoom</key>
 		<real>0.5</real>
 		<key>ZoomValues</key>
