@@ -6,7 +6,6 @@
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/created> "2017-09-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/issued> "2017-11-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/modified> "2017-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#" .
@@ -355,6 +354,7 @@ _:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/
 # 
 # https://w3id.org/fr/def/core#
 <https://w3id.org/fr/def/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 # 
 # https://w3id.org/fr/def/core#A-NA-WR
 <https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -442,40 +442,40 @@ _:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/
 <https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL1> <https://w3id.org/fr/def/core#confidenceValue> "1"^^<http://www.w3.org/2001/XMLSchema#int> .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#definition> "5 out of 5"@en .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess." .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#definition> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess."@en .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL1> <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5" .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL2
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> <https://w3id.org/fr/def/core#confidenceValue> "2"^^<http://www.w3.org/2001/XMLSchema#int> .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#definition> "4 out of 5"@en .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. " .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#definition> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL2> <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5" .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL3
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> <https://w3id.org/fr/def/core#confidenceValue> "3"^^<http://www.w3.org/2001/XMLSchema#int> .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#definition> "3 out of 5"@en .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. " .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL3> <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5" .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL4
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> <https://w3id.org/fr/def/core#confidenceValue> "4"^^<http://www.w3.org/2001/XMLSchema#int> .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#definition> "2 out of 5"@en .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. " .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. "@en .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL4> <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5" .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL5
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#ConfidenceConcept> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> .
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> <https://w3id.org/fr/def/core#confidenceValue> "5"^^<http://www.w3.org/2001/XMLSchema#int> .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#definition> "1 out of 5"@en .
-<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. " .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. "@en .
+<https://w3id.org/fr/def/core#ACL-1-5-ACL5> <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5" .
 # 
 # https://w3id.org/fr/def/core#DIS-0-10
 <https://w3id.org/fr/def/core#DIS-0-10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

@@ -20,6 +20,7 @@
 	dcterms:modified "2017-11-03"^^xsd:date ;
 	dc:creator <https://w3id.org/people/idafensp> ;
 	dcterms:issued "2017-11-07"^^xsd:date ;
+	dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
 	vann:preferredNamespaceUri "https://w3id.org/fr/def/core#" ;
 	dc:title "FAIR reviews ontology"@en ;
 	dc:publisher <http://www.oeg-upm.net/> ;
@@ -431,8 +432,7 @@ _:genid9 a owl:Restriction ;
 # 
 # https://w3id.org/fr/def/core#
 
-<https://w3id.org/fr/def/core#> a owl:NamedIndividual ;
-	dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+<https://w3id.org/fr/def/core#> a owl:NamedIndividual .
 # 
 # https://w3id.org/fr/def/core#0To10Continuos
 
@@ -448,10 +448,7 @@ _:genid9 a owl:Restriction ;
 
 :0To5Continuos a owl:NamedIndividual , :RatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 5 continuos"@en .
-	
-	
-
-<https://w3id.org/fr/def/core#SA-SR-BL> a <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
+	<https://w3id.org/fr/def/core#SA-SR-BL> a <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Strong Reject to Strong Accept, including Bordeline"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "St. Reject to St. Accept"@en .
 
@@ -761,32 +758,32 @@ _:genid9 a owl:Restriction ;
 
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> a <https://w3id.org/fr/def/core#ConfidenceConcept> ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-	<http://www.w3.org/2004/02/skos/core#definition> "1 out of 5"@en ;
-	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. " ;
+	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. "@en ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5" ;
 	<https://w3id.org/fr/def/core#confidenceValue> "5"^^xsd:int .
 
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> a <https://w3id.org/fr/def/core#ConfidenceConcept> ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-	<http://www.w3.org/2004/02/skos/core#definition> "2 out of 5"@en ;
-	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. " ;
+	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. "@en ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5" ;
 	<https://w3id.org/fr/def/core#confidenceValue> "4"^^xsd:int .
 
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> a <https://w3id.org/fr/def/core#ConfidenceConcept> ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-	<http://www.w3.org/2004/02/skos/core#definition> "3 out of 5"@en ;
-	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. " ;
+	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5" ;
 	<https://w3id.org/fr/def/core#confidenceValue> "3"^^xsd:int .
 
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> a <https://w3id.org/fr/def/core#ConfidenceConcept> ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-	<http://www.w3.org/2004/02/skos/core#definition> "4 out of 5"@en ;
-	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. " ;
+	<http://www.w3.org/2004/02/skos/core#definition> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5" ;
 	<https://w3id.org/fr/def/core#confidenceValue> "2"^^xsd:int .
 
 <https://w3id.org/fr/def/core#ACL-1-5-ACL1> a <https://w3id.org/fr/def/core#ConfidenceConcept> ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-	<http://www.w3.org/2004/02/skos/core#definition> "5 out of 5"@en ;
-	<http://www.w3.org/2004/02/skos/core#prefLabel> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess." ;
-	<https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int .	
+	<http://www.w3.org/2004/02/skos/core#definition> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess."@en ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5" ;
+	<https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int .
 # 
 # Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
