@@ -1,0 +1,183 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  text-align: justify;
+  text-justify: auto;
+}
+
+.navbar-strong {
+    font-weight: bold;
+}
+
+
+.navbar-default {
+  background-color: #315795;
+  border-color: #102c5a;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #b8c4d8;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #b8c4d8;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #b8c4d8;
+  background-color: #102c5a;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #b8c4d8;
+  background-color: #102c5a;
+}
+.navbar-default .navbar-toggle {
+  border-color: #102c5a;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #102c5a;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #b8c4d8;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #b8c4d8;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #b8c4d8;
+    background-color: #102c5a;
+  }
+}
+
+.userpic {
+    height: 1.5em;
+}
+
+.star
+{
+    color: #FDBF2D;
+    font-weight: bold;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(./img/researcher.png);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.banner {
+    margin: auto;
+    width: 55%;
+    min-width: 20em;
+    padding: 40px;
+}
+
+.center {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+.pad {
+    padding: 40px;
+}
+
+.pad-s {
+    padding: 20px;
+}
+
+.pad-l {
+    padding: 60px;
+}
+
+.icon8-s {
+    height : 1.5em;
+}
+
+.icon8-m {
+    height : 2em;
+}
+
+.icon8-l {
+    height : 3em;
+}
+
+
+
+
+
+/*
+For the full code about the custom search input
+check fernandotholl's snippet at
+https://bootsnipp.com/snippets/featured/custom-search-input
+*/
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
