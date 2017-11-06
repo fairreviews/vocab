@@ -21,7 +21,6 @@
         <dc:title xml:lang="en">FAIR reviews ontology</dc:title>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-01</terms:created>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-07</terms:issued>
-        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-03</terms:modified>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#date">fr</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/fr/def/core#</vann:preferredNamespaceUri>
@@ -651,7 +650,9 @@
     <!-- https://w3id.org/fr/def/core# -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#">
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
+    </owl:NamedIndividual>
     
 
 
@@ -803,8 +804,8 @@
         <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
         <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
         <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</confidenceValue>
-        <skos:definition xml:lang="en">5 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Not reviewer&apos;s area of expertise, or paper is very hard to understand. The evaluation is just an educated guess.</skos:prefLabel>
+        <skos:definition xml:lang="en">Not reviewer&apos;s area of expertise, or paper is very hard to understand. The evaluation is just an educated guess.</skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 out of 5</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -816,8 +817,8 @@
         <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
         <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
         <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</confidenceValue>
-        <skos:definition xml:lang="en">4 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn&apos;t understand some central points, or can&apos;t be sure about the novelty of the work. </skos:prefLabel>
+        <skos:definition xml:lang="en">Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn&apos;t understand some central points, or can&apos;t be sure about the novelty of the work. </skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 out of 5</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -829,8 +830,8 @@
         <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
         <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
         <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</confidenceValue>
-        <skos:definition xml:lang="en">3 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reviewer is pretty sure, but there&apos;s a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper&apos;s details, e.g., the math, experimental design, or novelty. </skos:prefLabel>
+        <skos:definition xml:lang="en">Reviewer is pretty sure, but there&apos;s a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper&apos;s details, e.g., the math, experimental design, or novelty. </skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 out of 5</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -842,8 +843,8 @@
         <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
         <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
         <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</confidenceValue>
-        <skos:definition xml:lang="en">2 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reviewer is quite sure, tried to check the important points carefully. It&apos;s unlikely, though conceivable, that he/she missed something that should affect his/her ratings. </skos:prefLabel>
+        <skos:definition xml:lang="en">Reviewer is quite sure, tried to check the important points carefully. It&apos;s unlikely, though conceivable, that he/she missed something that should affect his/her ratings. </skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 out of 5</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -855,8 +856,8 @@
         <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
         <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
         <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</confidenceValue>
-        <skos:definition xml:lang="en">1 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. </skos:prefLabel>
+        <skos:definition xml:lang="en">Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. </skos:definition>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 out of 5</skos:prefLabel>
     </owl:NamedIndividual>
     
 
