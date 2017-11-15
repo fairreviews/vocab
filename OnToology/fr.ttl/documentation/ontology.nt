@@ -6,6 +6,7 @@
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/created> "2017-09-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/issued> "2017-11-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/modified> "2017-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#" .
@@ -87,11 +88,6 @@
 # http://www.w3.org/2004/02/skos/core#inScheme
 <http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
-# https://w3id.org/fr/def/core#hasConfidence
-<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "relation between a review author and the confidence about the review topic" .
-<https://w3id.org/fr/def/core#hasConfidence> <http://www.w3.org/2000/01/rdf-schema#label> "has confidence"@en .
-# 
 # https://w3id.org/fr/def/core#hasRating
 <https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/fr/def/core#hasRating> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
@@ -106,6 +102,13 @@
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#Review> .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a scientific contribution and the reviews issued for it."@en .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#label> "has review"@en .
+# 
+# https://w3id.org/fr/def/core#hasReviewerConfidence
+<https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#ConfidenceConcept> .
+<https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution." .
+<https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#label> "has reviewer confidence"@en .
 # 
 # https://w3id.org/fr/def/core#isReplyTo
 <https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -354,7 +357,6 @@ _:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/
 # 
 # https://w3id.org/fr/def/core#
 <https://w3id.org/fr/def/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 # 
 # https://w3id.org/fr/def/core#A-NA-WR
 <https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

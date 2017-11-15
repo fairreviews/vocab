@@ -21,6 +21,7 @@
         <dc:title xml:lang="en">FAIR reviews ontology</dc:title>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-01</terms:created>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-07</terms:issued>
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-03</terms:modified>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#date">fr</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/fr/def/core#</vann:preferredNamespaceUri>
@@ -172,16 +173,6 @@
     
 
 
-    <!-- https://w3id.org/fr/def/core#hasConfidence -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasConfidence">
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relation between a review author and the confidence about the review topic</rdfs:comment>
-        <rdfs:label xml:lang="en">has confidence</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/fr/def/core#hasRating -->
 
 
@@ -203,6 +194,18 @@
         <rdfs:range rdf:resource="https://w3id.org/fr/def/core#Review"/>
         <rdfs:comment xml:lang="en">Relation between a scientific contribution and the reviews issued for it.</rdfs:comment>
         <rdfs:label xml:lang="en">has review</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/fr/def/core#hasReviewerConfidence -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasReviewerConfidence">
+        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
+        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reviewer confidence</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -650,9 +653,7 @@
     <!-- https://w3id.org/fr/def/core# -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#">
-        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#"/>
     
 
 

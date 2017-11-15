@@ -9,7 +9,7 @@ h1 {
 .hlist {
     border: 1px solid navy;
     padding:5px;
-    background-color: #F2F2F2; 
+    background-color: #F4FFFF; 
 }
 
 .hlist li {
@@ -98,7 +98,7 @@ dt {
     color:black;
     padding: 2px;
     border: 1px dotted navy;
-    background-color: #F2F2F2;
+    background-color: #F4FFFF;
 }
 
 .imageblock {
