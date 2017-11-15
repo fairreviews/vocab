@@ -34,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-11-06 11:42:54 +0000</string>
+	<string>2017-11-15 18:07:31 +0000</string>
 	<key>Modifier</key>
 	<string>María Poveda</string>
 	<key>NotesVisible</key>
@@ -93,7 +93,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {904, 1181}}</string>
+				<string>{{0, 0}, {1325.3804945054944, 1181}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -112,7 +112,7 @@
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{904, 1181}</string>
+			<string>{1325.3804945054944, 1181}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -771,7 +771,7 @@ fr:Reply}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{359.38384233386125, 568.70191902098452}, {106.55999761819839, 16.854378350365323}}</string>
+					<string>{{304.90411828409816, 568.70191902098452}, {161.03972166796166, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -806,7 +806,7 @@ fr:Reply}</string>
 					<key>Link</key>
 					<dict>
 						<key>url</key>
-						<string>#hasConfidence</string>
+						<string>#hasReviewerConfidence</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -868,7 +868,7 @@ fr:Reply}</string>
 \pard\tx60\tx300\tx940\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li20\fi-20\pardirnatural\qc
 
 \f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
-fr:hasConfidence}</string>
+fr:hasReviewerConfidence}</string>
 					</dict>
 					<key>VFlip</key>
 					<string>YES</string>
@@ -974,7 +974,7 @@ fr:hasConfidence}</string>
 						<key>ID</key>
 						<integer>43060</integer>
 						<key>Position</key>
-						<real>0.083561455225560716</real>
+						<real>0.083561457693576813</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -3513,13 +3513,13 @@ fabio:Endeavour}</string>
 \f0\b\fs24 \cf2 Namespaces referenced:\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading40\pardirnatural
 \cf2       
-\b0 dct\cf3 \expnd0\expndtw0\kerning0
+\b0 \cf2 dct\cf3 \expnd0\expndtw0\kerning0
 erms\cf2 \kerning1\expnd0\expndtw0 : http://purl.org/dc/terms/\
       bido: http://purl.org/spar/bido/\
       fabio: http://purl.org/spar/fabio/\
 
-\b       
-\b0 foaf: http://xmlns.com/foaf/0.1/ \
+\b \cf2       
+\b0 \cf2 foaf: http://xmlns.com/foaf/0.1/ \
       litre: http://www.essepuntato.it/2010/06/literalreification\
       lvont: http://lexvo.org/ontology#\
       odrl: http://www.w3.org/ns/odrl/2/\
@@ -9191,7 +9191,7 @@ lvont:Language}</string>
 				<string>YES</string>
 			</dict>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>3</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -13846,8 +13846,10 @@ fr:RatingConceptScheme}</string>
 		<integer>0</integer>
 		<key>Expanded_Canvases</key>
 		<array/>
+		<key>FitInWindow</key>
+		<true/>
 		<key>Frame</key>
-		<string>{{246, -896}, {1270, 873}}</string>
+		<string>{{47, 4}, {1364, 873}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -13857,15 +13859,15 @@ fr:RatingConceptScheme}</string>
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{0, 240.5555619281017}, {803.3333546143997, 808.88891031712706}}</string>
+		<string>{{0, 0}, {1325.3804945054944, 1181}}</string>
 		<key>Zoom</key>
-		<real>0.89999997615814209</real>
+		<real>0.61642675698560545</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Vocabulary</string>
+				<real>0.0</real>
 				<real>0.89999997615814209</real>
-				<real>0.5</real>
 			</array>
 			<array>
 				<string>SkosConcepts</string>
