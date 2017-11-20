@@ -14,6 +14,7 @@
                                  <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en ;
                                  <http://purl.org/dc/terms/created> "2017-09-01"^^xsd:date ;
                                  <http://purl.org/dc/terms/issued> "2017-11-07"^^xsd:date ;
+                                 <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
                                  <http://purl.org/dc/terms/modified> "2017-11-03"^^xsd:date ;
                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^xsd:date ;
                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#"^^xsd:string ;
@@ -94,12 +95,6 @@ xsd:date rdf:type rdfs:Datatype .
 <http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
 
 
-###  https://w3id.org/fr/def/core#hasConfidence
-<https://w3id.org/fr/def/core#hasConfidence> rdf:type owl:ObjectProperty ;
-                                             rdfs:comment "relation between a review author and the confidence about the review topic"^^xsd:string ;
-                                             rdfs:label "has confidence"@en .
-
-
 ###  https://w3id.org/fr/def/core#hasRating
 <https://w3id.org/fr/def/core#hasRating> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <https://w3id.org/fr/def/core#Review> ;
@@ -115,6 +110,14 @@ xsd:date rdf:type rdfs:Datatype .
                                          rdfs:range <https://w3id.org/fr/def/core#Review> ;
                                          rdfs:comment "Relation between a scientific contribution and the reviews issued for it."@en ;
                                          rdfs:label "has review"@en .
+
+
+###  https://w3id.org/fr/def/core#hasReviewerConfidence
+<https://w3id.org/fr/def/core#hasReviewerConfidence> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <https://w3id.org/fr/def/core#Review> ;
+                                                     rdfs:range <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                                     rdfs:comment "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution."^^xsd:string ;
+                                                     rdfs:label "has reviewer confidence"@en .
 
 
 ###  https://w3id.org/fr/def/core#isReplyTo
@@ -383,8 +386,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://w3id.org/fr/def/core#
-<https://w3id.org/fr/def/core#> rdf:type owl:NamedIndividual ;
-                                <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+<https://w3id.org/fr/def/core#> rdf:type owl:NamedIndividual .
 
 
 ###  https://w3id.org/fr/def/core#A-NA-WR

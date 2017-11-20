@@ -125,6 +125,12 @@ This section provides details for each class and property defined by FAIR review
             <a href="#confidenceValue" title="https://w3id.org/fr/def/core#confidenceValue">confidence value</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasReviewerConfidence"
+               title="https://w3id.org/fr/def/core#hasReviewerConfidence">has reviewer confidence</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>has members</dt>
          <dd>
             <a href="#ACL-1-5-ACL1" title="https://w3id.org/fr/def/core#ACL-1-5-ACL1">1 out of 5</a>
@@ -565,6 +571,8 @@ This section provides details for each class and property defined by FAIR review
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasRating" title="https://w3id.org/fr/def/core#hasRating">has rating</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasReviewerConfidence"
+               title="https://w3id.org/fr/def/core#hasReviewerConfidence">has reviewer confidence</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isReviewOf" title="https://w3id.org/fr/def/core#isReviewOf">is review of</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#issuedAt" title="https://w3id.org/fr/def/core#issuedAt">issued at</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#issuedFor" title="https://w3id.org/fr/def/core#issuedFor">issued for</a>
@@ -632,13 +640,14 @@ This section provides details for each class and property defined by FAIR review
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#hasConfidence" title="https://w3id.org/fr/def/core#hasConfidence">has confidence</a>
-      </li>
-      <li>
          <a href="#hasRating" title="https://w3id.org/fr/def/core#hasRating">has rating</a>
       </li>
       <li>
          <a href="#hasReview" title="https://w3id.org/fr/def/core#hasReview">has review</a>
+      </li>
+      <li>
+         <a href="#hasReviewerConfidence"
+            title="https://w3id.org/fr/def/core#hasReviewerConfidence">has reviewer confidence</a>
       </li>
       <li>
          <a href="#isReplyTo" title="https://w3id.org/fr/def/core#isReplyTo">is reply to</a>
@@ -656,17 +665,6 @@ This section provides details for each class and property defined by FAIR review
          <a href="#releasedBy" title="https://w3id.org/fr/def/core#releasedBy">released by</a>
       </li>
    </ul>
-   <div class="entity" id="hasConfidence">
-      <h3>has confidence<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/fr/def/core#hasConfidence</p>
-      <div class="comment">
-         <span class="markdown">relation between a review author and the confidence about the review topic</span>
-      </div>
-   </div>
    <div class="entity" id="hasRating">
       <h3>has rating<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -718,6 +716,31 @@ This section provides details for each class and property defined by FAIR review
             <dd>
                <a href="#isReviewOf" title="https://w3id.org/fr/def/core#isReviewOf">is review of</a>
                <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasReviewerConfidence">
+      <h3>has reviewer confidence<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/fr/def/core#hasReviewerConfidence</p>
+      <div class="comment">
+         <span class="markdown">Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Review" title="https://w3id.org/fr/def/core#Review">Review</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ConfidenceConcept" title="https://w3id.org/fr/def/core#ConfidenceConcept">Confidence concept</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -1056,11 +1079,6 @@ This section provides details for each class and property defined by FAIR review
       </li>
       <li>
          <a href="#DIS-0-10-9" title="https://w3id.org/fr/def/core#DIS-0-10-9">9 out of 10</a>
-      </li>
-      <li>
-         <a href="#" title="https://w3id.org/fr/def/core#">
-            <span></span>
-         </a>
       </li>
       <li>
          <a href="#A-R-TS-ACC" title="https://w3id.org/fr/def/core#A-R-TS-ACC">Accept</a>
@@ -2023,22 +2041,6 @@ This section provides details for each class and property defined by FAIR review
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"9"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#int">int</span>
             </span>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="">
-      <h3>:<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/fr/def/core#</p>
-      <dl class="description">
-         <dt>has facts</dt>
-         <dd>
-            <span class="dotted" title="http://purl.org/dc/terms/license">license</span>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="dotted" title="http://purl.org/NET/rdflicense/cc-by4.0">cc by4.0</span>
          </dd>
       </dl>
    </div>

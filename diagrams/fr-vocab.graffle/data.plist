@@ -34,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-11-05 18:53:00 +0000</string>
+	<string>2017-11-15 18:07:31 +0000</string>
 	<key>Modifier</key>
 	<string>María Poveda</string>
 	<key>NotesVisible</key>
@@ -93,7 +93,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {904, 1181}}</string>
+				<string>{{0, 0}, {1325.3804945054944, 1181}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -112,7 +112,7 @@
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{904, 1181}</string>
+			<string>{1325.3804945054944, 1181}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -154,6 +154,11 @@
 						<real>0.20115306973457336</real>
 						<key>RotationType</key>
 						<integer>0</integer>
+					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#hasReview</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -695,6 +700,11 @@ fr:Reply}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43073</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#content</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -761,7 +771,7 @@ fr:Reply}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{359.38384233386125, 568.70191902098452}, {106.55999761819839, 16.854378350365323}}</string>
+					<string>{{304.90411828409816, 568.70191902098452}, {161.03972166796166, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -792,6 +802,11 @@ fr:Reply}</string>
 						<real>0.25581219792366028</real>
 						<key>RotationType</key>
 						<integer>0</integer>
+					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#hasReviewerConfidence</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -853,7 +868,7 @@ fr:Reply}</string>
 \pard\tx60\tx300\tx940\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li20\fi-20\pardirnatural\qc
 
 \f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
-fr:hasConfidence}</string>
+fr:hasReviewerConfidence}</string>
 					</dict>
 					<key>VFlip</key>
 					<string>YES</string>
@@ -931,7 +946,7 @@ fr:hasConfidence}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{48.044030170144481, 353.15574827992748}, {80.870326893827041, 16.854378350365323}}</string>
+					<string>{{43.99889328183724, 353.15574827992748}, {80.870326893827041, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -959,9 +974,14 @@ fr:hasConfidence}</string>
 						<key>ID</key>
 						<integer>43060</integer>
 						<key>Position</key>
-						<real>0.077362246811389923</real>
+						<real>0.083561457693576813</real>
 						<key>RotationType</key>
 						<integer>0</integer>
+					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#hasRating</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -1328,6 +1348,11 @@ fr:hasRating}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43067</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#confidenceValue</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -1414,6 +1439,11 @@ fr:confidenceValue:: rdfs:Literal}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43066</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#ConfidenceConcept</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -1510,6 +1540,11 @@ fr:ConfidenceConcept}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43065</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#DiscreteConfidenceConceptScheme</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -1606,6 +1641,11 @@ fr:DiscreteConfidenceConceptScheme}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43064</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#ConfidenceConceptScheme</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -1795,6 +1835,11 @@ fr:ConfidenceConceptScheme}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43062</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#ratingValue</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -2214,6 +2259,11 @@ skos:Concept}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43054</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#RatingConcept</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -2446,6 +2496,11 @@ fr:RatingConcept}</string>
 					</dict>
 					<key>ID</key>
 					<integer>43051</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#DiscreteRatingConceptScheme</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -2632,13 +2687,8 @@ skos:ConceptScheme}</string>
 					<integer>43049</integer>
 					<key>Link</key>
 					<dict>
-						<key>documentJump</key>
-						<dict>
-							<key>Type</key>
-							<integer>6</integer>
-							<key>Worksheet</key>
-							<integer>0</integer>
-						</dict>
+						<key>url</key>
+						<string>#RatingConceptScheme</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -2885,6 +2935,11 @@ fr:RatingConceptScheme}</string>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#releasedBy</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.7396002417658698, -1.1094003915786703}</string>
@@ -3048,6 +3103,11 @@ fr:releasedBy}</string>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#issuedFor</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.7396002417658698, -1.1094003915786703}</string>
@@ -3204,6 +3264,11 @@ fr:issuedFor}</string>
 					</dict>
 					<key>ID</key>
 					<integer>42714</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#ConveningOrganization</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -3448,13 +3513,13 @@ fabio:Endeavour}</string>
 \f0\b\fs24 \cf2 Namespaces referenced:\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\slleading40\pardirnatural
 \cf2       
-\b0 dct\cf3 \expnd0\expndtw0\kerning0
+\b0 \cf2 dct\cf3 \expnd0\expndtw0\kerning0
 erms\cf2 \kerning1\expnd0\expndtw0 : http://purl.org/dc/terms/\
       bido: http://purl.org/spar/bido/\
       fabio: http://purl.org/spar/fabio/\
 
-\b       
-\b0 foaf: http://xmlns.com/foaf/0.1/ \
+\b \cf2       
+\b0 \cf2 foaf: http://xmlns.com/foaf/0.1/ \
       litre: http://www.essepuntato.it/2010/06/literalreification\
       lvont: http://lexvo.org/ontology#\
       odrl: http://www.w3.org/ns/odrl/2/\
@@ -3669,6 +3734,11 @@ fabio:Work}</string>
 						<real>0.45620229840278625</real>
 						<key>RotationType</key>
 						<integer>0</integer>
+					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#isReplyTo</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -4650,6 +4720,11 @@ fr:Review}</string>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#issuedAt</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.7396002417658698, -1.1094003915786703}</string>
@@ -4804,6 +4879,11 @@ fr:issuedAt}</string>
 					</dict>
 					<key>ID</key>
 					<integer>42693</integer>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#TrackingSystem</string>
+					</dict>
 					<key>Magnets</key>
 					<array>
 						<string>{-0.73960024176586936, -1.1094003915786743}</string>
@@ -5250,6 +5330,11 @@ dcterms:modified:: xsd:date}</string>
 						<real>0.55907720327377319</real>
 						<key>RotationType</key>
 						<integer>0</integer>
+					</dict>
+					<key>Link</key>
+					<dict>
+						<key>url</key>
+						<string>#isReviewOf</string>
 					</dict>
 					<key>Magnets</key>
 					<array>
@@ -9106,7 +9191,7 @@ lvont:Language}</string>
 				<string>YES</string>
 			</dict>
 			<key>HPages</key>
-			<integer>2</integer>
+			<integer>3</integer>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
@@ -13761,8 +13846,10 @@ fr:RatingConceptScheme}</string>
 		<integer>0</integer>
 		<key>Expanded_Canvases</key>
 		<array/>
+		<key>FitInWindow</key>
+		<true/>
 		<key>Frame</key>
-		<string>{{16, 72}, {1208, 909}}</string>
+		<string>{{47, 4}, {1364, 873}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -13772,14 +13859,14 @@ fr:RatingConceptScheme}</string>
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{-209, -173}, {1322, 1528}}</string>
+		<string>{{0, 0}, {1325.3804945054944, 1181}}</string>
 		<key>Zoom</key>
-		<real>0.5</real>
+		<real>0.61642675698560545</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Vocabulary</string>
-				<real>0.5</real>
+				<real>0.0</real>
 				<real>0.89999997615814209</real>
 			</array>
 			<array>

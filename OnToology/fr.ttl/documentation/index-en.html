@@ -5,7 +5,7 @@
  <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />   
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/fr/def/core#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/fr/def/core#","name":"FAIR reviews ontology", "headline":"Document describing the ontology https://w3id.org/fr/def/core#", "datePublished":"2017-11-03", "version":"0.1.0", "author":[{"@type":"Person","name":"https://w3id.org/people/idafensp","url":"https://w3id.org/people/idafensp"},{"@type":"Person","name":"https://w3id.org/people/mpoveda","url":"https://w3id.org/people/mpoveda"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/fr/def/core#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/fr/def/core#","name":"FAIR Reviews ontology", "headline":"Document describing the ontology https://w3id.org/fr/def/core#", "datePublished":"2017-11-03", "version":"0.1.0", "author":[{"@type":"Person","name":"https://w3id.org/people/idafensp","url":"https://w3id.org/people/idafensp"},{"@type":"Person","name":"https://w3id.org/people/mpoveda","url":"https://w3id.org/people/mpoveda"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -64,6 +64,13 @@ function loadTOC(){
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="./assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./assets/js/ie-emulation-modes-warning.js"></script>
+
+       <script>
+       var shiftWindow = function() { scrollBy(0, -50) };
+       if (location.hash) shiftWindow();
+       window.addEventListener("hashchange", shiftWindow);
+   </script>
+
   </head> 
 
 <body>
@@ -81,24 +88,19 @@ function loadTOC(){
         </div>
         <div id="navbar" class="navbar-collapse collapse navbar-right navbar-strong">
           <ul class="nav navbar-nav">
-            <li><a href="sparql">SPARQL</a></li>
-            <li><a href="http://fairreviews.linkeddata.es/def/core">Model</a></li>
-            <li><a href="#">Data</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="login.html"><img class="userpic img-circle" src="https://secure.gravatar.com/avatar/96bdb866a7c0f8bfbb696e01047fa75a"></a></li>
-            
+            <li><a href="#">Model</a></li>
+            <li><a href="http://fairreviews.linkeddata.es">About</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
 <div class="container"><div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>FAIR reviews ontology</h1>
+<h1>FAIR* Reviews ontology</h1>
 <h2>Release  2017-11-03</h2>
 <dt>Revision:</dt> <dd>0.1.0</dd>
 <dl><dt>Authors:</dt>
-<dd><a href="https://w3id.org/people/idafensp">Idafen Santana</a></dd>
+<dd><a href="https://w3id.org/people/idafensp">Idafen Santana-Pérez</a></dd>
 
 <dd><a href="https://w3id.org/people/mpoveda">María Poveda-Villalón</a></dd></dl>
 
