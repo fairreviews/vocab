@@ -120,6 +120,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                      rdfs:label "has reviewer confidence"@en .
 
 
+###  https://w3id.org/fr/def/core#hasSubReviewer
+<https://w3id.org/fr/def/core#hasSubReviewer> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://w3id.org/fr/def/core#Review> ;
+                                              rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                              rdfs:label "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en ,
+                                                         "has sub-reviewer"@en .
+
+
 ###  https://w3id.org/fr/def/core#isReplyTo
 <https://w3id.org/fr/def/core#isReplyTo> rdf:type owl:ObjectProperty ;
                                          rdfs:domain <http://purl.org/spar/fabio/Endeavour> ;
@@ -129,7 +137,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://w3id.org/fr/def/core#isReviewOf
-<https://w3id.org/fr/def/core#isReviewOf> rdf:type owl:ObjectProperty ;
+<https://w3id.org/fr/def/core#isReviewOf> rdf:type owl:ObjectProperty ,
+                                                   owl:FunctionalProperty ;
                                           rdfs:domain <https://w3id.org/fr/def/core#Review> ;
                                           rdfs:range <http://purl.org/spar/fabio/Expression> ;
                                           rdfs:comment "The relation between a review and the scientific contribution that is subject of the review."@en ;
@@ -359,6 +368,11 @@ xsd:date rdf:type rdfs:Datatype .
                                                         owl:someValuesFrom <http://www.w3.org/ns/odrl/2/Policy>
                                                       ] ,
                                                       [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://w3id.org/fr/def/core#isReviewOf> ;
+                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass <http://purl.org/spar/fabio/Expression>
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
                                                         owl:onProperty <http://purl.org/dc/terms/issued> ;
                                                         owl:someValuesFrom xsd:date
                                                       ] ,
@@ -478,7 +492,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5
 <https://w3id.org/fr/def/core#ACL-1-5> rdf:type owl:NamedIndividual ,
                                                 <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics anual meetings"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings"@en ;
                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 1 to 5"@en .
 
 
