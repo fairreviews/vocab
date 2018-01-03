@@ -100,7 +100,8 @@ This section provides details for each class and property defined by FAIR review
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#releasedBy" title="https://w3id.org/fr/def/core#releasedBy">released by</a>
+            <a href="#hasSubReviewer" title="https://w3id.org/fr/def/core#hasSubReviewer">The relation between a review and agents that have contributed to the overall review as sub-reviwers.</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#releasedBy" title="https://w3id.org/fr/def/core#releasedBy">released by</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -557,6 +558,12 @@ This section provides details for each class and property defined by FAIR review
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
+            <a href="#isReviewOf" title="https://w3id.org/fr/def/core#isReviewOf">is review of</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">max</span> 1 <a href="#http://purl.org/spar/fabio/Expression" title="http://purl.org/spar/fabio/Expression">expression</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <span class="dotted" title="http://purl.org/dc/terms/issued">issued</span>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="logic">some</span> 
@@ -570,7 +577,8 @@ This section provides details for each class and property defined by FAIR review
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasRating" title="https://w3id.org/fr/def/core#hasRating">has rating</a>
+            <a href="#hasSubReviewer" title="https://w3id.org/fr/def/core#hasSubReviewer">The relation between a review and agents that have contributed to the overall review as sub-reviwers.</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasRating" title="https://w3id.org/fr/def/core#hasRating">has rating</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasReviewerConfidence"
                title="https://w3id.org/fr/def/core#hasReviewerConfidence">has reviewer confidence</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isReviewOf" title="https://w3id.org/fr/def/core#isReviewOf">is review of</a>
@@ -664,6 +672,9 @@ This section provides details for each class and property defined by FAIR review
       <li>
          <a href="#releasedBy" title="https://w3id.org/fr/def/core#releasedBy">released by</a>
       </li>
+      <li>
+         <a href="#hasSubReviewer" title="https://w3id.org/fr/def/core#hasSubReviewer">The relation between a review and agents that have contributed to the overall review as sub-reviwers.</a>
+      </li>
    </ul>
    <div class="entity" id="hasRating">
       <h3>has rating<sup class="type-op" title="object property">op</sup>
@@ -701,6 +712,8 @@ This section provides details for each class and property defined by FAIR review
          <span class="markdown">Relation between a scientific contribution and the reviews issued for it.</span>
       </div>
       <div class="description">
+         <p>
+            <strong>has characteristics:</strong> inverse functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
@@ -781,6 +794,8 @@ This section provides details for each class and property defined by FAIR review
          <span class="markdown">The relation between a review and the scientific contribution that is subject of the review.</span>
       </div>
       <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
@@ -861,6 +876,28 @@ This section provides details for each class and property defined by FAIR review
       <div class="comment">
          <span class="markdown">The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to.</span>
       </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Review" title="https://w3id.org/fr/def/core#Review">Review</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://xmlns.com/foaf/0.1/Agent" title="http://xmlns.com/foaf/0.1/Agent">agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSubReviewer">
+      <h3>The relation between a review and agents that have contributed to the overall review as sub-reviwers.<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/fr/def/core#hasSubReviewer</p>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1079,6 +1116,11 @@ This section provides details for each class and property defined by FAIR review
       </li>
       <li>
          <a href="#DIS-0-10-9" title="https://w3id.org/fr/def/core#DIS-0-10-9">9 out of 10</a>
+      </li>
+      <li>
+         <a href="#" title="https://w3id.org/fr/def/core#">
+            <span></span>
+         </a>
       </li>
       <li>
          <a href="#A-R-TS-ACC" title="https://w3id.org/fr/def/core#A-R-TS-ACC">Accept</a>
@@ -2044,6 +2086,22 @@ This section provides details for each class and property defined by FAIR review
          </dd>
       </dl>
    </div>
+   <div class="entity" id="">
+      <h3>:<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/fr/def/core#</p>
+      <dl class="description">
+         <dt>has facts</dt>
+         <dd>
+            <span class="dotted" title="http://purl.org/dc/terms/license">license</span>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="dotted" title="http://purl.org/NET/rdflicense/cc-by4.0">cc by4.0</span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="A-R-TS-ACC">
       <h3>Accept<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -2291,7 +2349,7 @@ This section provides details for each class and property defined by FAIR review
       <p>
          <strong>IRI:</strong> https://w3id.org/fr/def/core#ACL-1-5</p>
       <div class="comment">
-         <span class="markdown">Discrete scale from 1 to 5, used by Association for Computational Linguistics anual meetings</span>
+         <span class="markdown">Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
