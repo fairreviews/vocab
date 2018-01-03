@@ -21,7 +21,6 @@
         <dc:title xml:lang="en">FAIR reviews ontology</dc:title>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-09-01</terms:created>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-07</terms:issued>
-        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-03</terms:modified>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#date">fr</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/fr/def/core#</vann:preferredNamespaceUri>
@@ -190,6 +189,7 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasReview">
         <owl:inverseOf rdf:resource="https://w3id.org/fr/def/core#isReviewOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Expression"/>
         <rdfs:range rdf:resource="https://w3id.org/fr/def/core#Review"/>
         <rdfs:comment xml:lang="en">Relation between a scientific contribution and the reviews issued for it.</rdfs:comment>
@@ -673,7 +673,9 @@
     <!-- https://w3id.org/fr/def/core# -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#">
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
+    </owl:NamedIndividual>
     
 
 

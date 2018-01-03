@@ -14,7 +14,6 @@
                                  <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en ;
                                  <http://purl.org/dc/terms/created> "2017-09-01"^^xsd:date ;
                                  <http://purl.org/dc/terms/issued> "2017-11-07"^^xsd:date ;
-                                 <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
                                  <http://purl.org/dc/terms/modified> "2017-11-03"^^xsd:date ;
                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^xsd:date ;
                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#"^^xsd:string ;
@@ -106,6 +105,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#hasReview
 <https://w3id.org/fr/def/core#hasReview> rdf:type owl:ObjectProperty ;
                                          owl:inverseOf <https://w3id.org/fr/def/core#isReviewOf> ;
+                                         rdf:type owl:InverseFunctionalProperty ;
                                          rdfs:domain <http://purl.org/spar/fabio/Expression> ;
                                          rdfs:range <https://w3id.org/fr/def/core#Review> ;
                                          rdfs:comment "Relation between a scientific contribution and the reviews issued for it."@en ;
@@ -400,7 +400,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  https://w3id.org/fr/def/core#
-<https://w3id.org/fr/def/core#> rdf:type owl:NamedIndividual .
+<https://w3id.org/fr/def/core#> rdf:type owl:NamedIndividual ;
+                                <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 
 
 ###  https://w3id.org/fr/def/core#A-NA-WR
