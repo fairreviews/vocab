@@ -139,6 +139,13 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution." ;
 	rdfs:label "has reviewer confidence"@en .
 # 
+# https://w3id.org/fr/def/core#hasSubReviewer
+
+:hasSubReviewer a owl:ObjectProperty ;
+	rdfs:domain :Review ;
+	rdfs:range foaf:Agent ;
+	rdfs:label "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en , "has sub-reviewer"@en .
+# 
 # https://w3id.org/fr/def/core#isReplyTo
 
 :isReplyTo a owl:ObjectProperty ;
@@ -149,7 +156,7 @@ dcterms:license a owl:ObjectProperty .
 # 
 # https://w3id.org/fr/def/core#isReviewOf
 
-:isReviewOf a owl:ObjectProperty ;
+:isReviewOf a owl:ObjectProperty , owl:FunctionalProperty ;
 	rdfs:domain :Review ;
 	rdfs:range <http://purl.org/spar/fabio/Expression> ;
 	rdfs:comment "The relation between a review and the scientific contribution that is subject of the review."@en ;
@@ -403,12 +410,19 @@ _:genid7 a owl:Restriction ;
 :Review rdfs:subClassOf _:genid8 .
 
 _:genid8 a owl:Restriction ;
-	owl:onProperty dcterms:issued ;
-	owl:someValuesFrom xsd:date .
+	owl:onProperty :isReviewOf ;
+	owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass <http://purl.org/spar/fabio/Expression> .
 
 :Review rdfs:subClassOf _:genid9 .
 
 _:genid9 a owl:Restriction ;
+	owl:onProperty dcterms:issued ;
+	owl:someValuesFrom xsd:date .
+
+:Review rdfs:subClassOf _:genid10 .
+
+_:genid10 a owl:Restriction ;
 	owl:onProperty dcterms:modified ;
 	owl:someValuesFrom xsd:date .
 
@@ -518,7 +532,7 @@ _:genid9 a owl:Restriction ;
 # https://w3id.org/fr/def/core#ACL-1-5
 
 :ACL-1-5 a owl:NamedIndividual , :DiscreteConfidenceConceptScheme ;
-	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics anual meetings"@en ;
+	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 1 to 5"@en .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL1
