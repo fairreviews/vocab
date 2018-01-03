@@ -110,6 +110,13 @@
 <https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution." .
 <https://w3id.org/fr/def/core#hasReviewerConfidence> <http://www.w3.org/2000/01/rdf-schema#label> "has reviewer confidence"@en .
 # 
+# https://w3id.org/fr/def/core#hasSubReviewer
+<https://w3id.org/fr/def/core#hasSubReviewer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#hasSubReviewer> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
+<https://w3id.org/fr/def/core#hasSubReviewer> <http://www.w3.org/2000/01/rdf-schema#range> <http://xmlns.com/foaf/0.1/Agent> .
+<https://w3id.org/fr/def/core#hasSubReviewer> <http://www.w3.org/2000/01/rdf-schema#label> "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en .
+<https://w3id.org/fr/def/core#hasSubReviewer> <http://www.w3.org/2000/01/rdf-schema#label> "has sub-reviewer"@en .
+# 
 # https://w3id.org/fr/def/core#isReplyTo
 <https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/fr/def/core#isReplyTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Endeavour> .
@@ -119,6 +126,7 @@
 # 
 # https://w3id.org/fr/def/core#isReviewOf
 <https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/fr/def/core#Review> .
 <https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spar/fabio/Expression> .
 <https://w3id.org/fr/def/core#isReviewOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The relation between a review and the scientific contribution that is subject of the review."@en .
@@ -328,12 +336,17 @@ _:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/li
 _:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/odrl/2/Policy> .
 <https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
 _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/issued> .
-_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/fr/def/core#isReviewOf> .
+_:genid8 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/spar/fabio/Expression> .
 <https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
 _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/modified> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/issued> .
 _:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/modified> .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#comment> "A review of a scientific contribution."@en .
 <https://w3id.org/fr/def/core#Review> <http://www.w3.org/2000/01/rdf-schema#label> "Review"@en .
 # 
@@ -436,7 +449,7 @@ _:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/
 # https://w3id.org/fr/def/core#ACL-1-5
 <https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> .
-<https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics anual meetings"@en .
+<https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings"@en .
 <https://w3id.org/fr/def/core#ACL-1-5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 1 to 5"@en .
 # 
 # https://w3id.org/fr/def/core#ACL-1-5-ACL1
