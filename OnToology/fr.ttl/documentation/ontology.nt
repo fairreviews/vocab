@@ -6,7 +6,6 @@
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/created> "2017-09-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/issued> "2017-11-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 <https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/modified> "2017-11-03"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/fr/def/core#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#" .
@@ -98,6 +97,7 @@
 # https://w3id.org/fr/def/core#hasReview
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/fr/def/core#isReviewOf> .
+<https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spar/fabio/Expression> .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/fr/def/core#Review> .
 <https://w3id.org/fr/def/core#hasReview> <http://www.w3.org/2000/01/rdf-schema#comment> "Relation between a scientific contribution and the reviews issued for it."@en .
@@ -370,6 +370,7 @@ _:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001
 # 
 # https://w3id.org/fr/def/core#
 <https://w3id.org/fr/def/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/fr/def/core#> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 # 
 # https://w3id.org/fr/def/core#A-NA-WR
 <https://w3id.org/fr/def/core#A-NA-WR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
