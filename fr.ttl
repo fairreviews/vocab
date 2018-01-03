@@ -20,6 +20,7 @@
 	dcterms:modified "2017-11-03"^^xsd:date ;
 	dc:creator <https://w3id.org/people/idafensp> ;
 	dcterms:issued "2017-11-07"^^xsd:date ;
+	dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
 	vann:preferredNamespaceUri "https://w3id.org/fr/def/core#" ;
 	dc:title "FAIR reviews ontology"@en ;
 	dc:publisher <http://www.oeg-upm.net/> ;
@@ -126,6 +127,7 @@ dcterms:license a owl:ObjectProperty .
 
 :hasReview a owl:ObjectProperty ;
 	owl:inverseOf :isReviewOf ;
+	a owl:InverseFunctionalProperty ;
 	rdfs:domain <http://purl.org/spar/fabio/Expression> ;
 	rdfs:range :Review ;
 	rdfs:comment "Relation between a scientific contribution and the reviews issued for it."@en ;
@@ -451,8 +453,7 @@ _:genid10 a owl:Restriction ;
 # 
 # https://w3id.org/fr/def/core#
 
-<https://w3id.org/fr/def/core#> a owl:NamedIndividual ;
-	dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+<https://w3id.org/fr/def/core#> a owl:NamedIndividual .
 # 
 # https://w3id.org/fr/def/core#A-NA-WR
 
