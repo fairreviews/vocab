@@ -34,7 +34,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2018-01-03 13:16:14 +0000</string>
+	<string>2018-01-03 13:25:08 +0000</string>
 	<key>Modifier</key>
 	<string>María Poveda</string>
 	<key>NotesVisible</key>
@@ -93,7 +93,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {904, 1181}}</string>
+				<string>{{0, 0}, {904, 1175}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -112,7 +112,7 @@
 			<key>CanvasOrigin</key>
 			<string>{0, 0}</string>
 			<key>CanvasSize</key>
-			<string>{904, 1181}</string>
+			<string>{904, 1175}</string>
 			<key>ColumnAlign</key>
 			<integer>1</integer>
 			<key>ColumnSpacing</key>
@@ -123,7 +123,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{202.19042480988514, 186.17289996147156}, {110.56208882354622, 14.40000057220459}}</string>
+					<string>{{212.50393396537606, 182.17289996147156}, {109.26576232910153, 14.40000057220459}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -153,7 +153,7 @@
 						<key>Offset</key>
 						<real>-1.3729002475738525</real>
 						<key>Position</key>
-						<real>0.60462122668325913</real>
+						<real>0.51088524594390172</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -243,7 +243,7 @@
 						<key>ID</key>
 						<integer>42679</integer>
 						<key>Position</key>
-						<real>0.89899931150124135</real>
+						<real>0.47035725556757119</real>
 					</dict>
 					<key>ID</key>
 					<integer>33803</integer>
@@ -252,13 +252,13 @@
 					<key>OrthogonalBarPoint</key>
 					<string>{0, 0}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>4.5872900982396629</real>
+					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{167.92541980352067, 247}</string>
-						<string>{189, 240}</string>
-						<string>{333.65151842889765, 192}</string>
-						<string>{335, 169.38417673031023}</string>
+						<string>{354.80585377734383, 212}</string>
+						<string>{351.76533105254481, 188}</string>
+						<string>{185.42109181680314, 188}</string>
+						<string>{186.00000000000003, 163.38417673031023}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -285,17 +285,10 @@
 							<string>StickArrow</string>
 						</dict>
 					</dict>
-					<key>Tail</key>
-					<dict>
-						<key>ID</key>
-						<integer>42679</integer>
-						<key>Position</key>
-						<real>0.17973546378870731</real>
-					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{288.24775327714212, 203.03415826937098}, {109.26576232910153, 16.854378350365323}}</string>
+					<string>{{185.42109181680314, 220.46967995769899}, {80.870326893827041, 23.012603759765625}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -323,7 +316,7 @@
 						<key>ID</key>
 						<integer>43088</integer>
 						<key>Position</key>
-						<real>0.28647261986592532</real>
+						<real>0.75068130502482966</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -392,7 +385,8 @@
 \pard\tx60\tx300\tx940\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li20\fi-20\pardirnatural\qc
 
 \f0\b\fs24 \cf2 \expnd0\expndtw0\kerning0
-fr:hasReview (IF)}</string>
+fr:hasReview \
+(IF)}</string>
 					</dict>
 					<key>VFlip</key>
 					<string>YES</string>
@@ -426,10 +420,10 @@ fr:hasReview (IF)}</string>
 					<key>OrthogonalBarPoint</key>
 					<string>{648.96602495712159, 418.29205840294895}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>14.38671875</real>
+					<real>19.38671875</real>
 					<key>Points</key>
 					<array>
-						<string>{405.78191442007903, 188.56134744455363}</string>
+						<string>{405.78191442007903, 182.56134744455363}</string>
 						<string>{225.85625526371666, 308.14521783844089}</string>
 					</array>
 					<key>Style</key>
@@ -849,7 +843,7 @@ fr:Reply}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{523.43998830020428, 187.05791080181442}, {137.21164367814981, 22.817724213704285}}</string>
+					<string>{{523.43998830020428, 181.05791080181442}, {137.21164367814981, 22.817724213704285}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -1896,7 +1890,7 @@ fr:ConfidenceConceptScheme}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{425.11999040842056, 90.812601104378714}, {145.11441088304355, 22.817724213704285}}</string>
+					<string>{{425.11999040842056, 84.812601104378714}, {145.11441088304355, 22.817724213704285}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -2970,8 +2964,8 @@ fr:RatingConceptScheme}</string>
 					<real>10.459209183352513</real>
 					<key>Points</key>
 					<array>
-						<string>{592.04581013927918, 165.54874368478801}</string>
-						<string>{497.67719873310671, 113.63032531808298}</string>
+						<string>{592.04581013927918, 159.54874368478801}</string>
+						<string>{497.67719873310671, 107.63032531808298}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3038,8 +3032,8 @@ fr:RatingConceptScheme}</string>
 					<real>10.459209183352513</real>
 					<key>Points</key>
 					<array>
-						<string>{423.99287290871143, 165.54874368478801}</string>
-						<string>{497.67719873310671, 113.63032531808298}</string>
+						<string>{423.99287290871143, 159.54874368478801}</string>
+						<string>{497.67719873310671, 107.63032531808298}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3521,7 +3515,7 @@ fr:ConveningOrganization}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{425.11999040842056, 67.799997344613075}, {145.11441088304355, 23.012603759765625}}</string>
+					<string>{{425.11999040842056, 61.799997344613075}, {145.11441088304355, 23.012603759765625}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -3706,7 +3700,7 @@ erms\cf2 \kerning1\expnd0\expndtw0 : http://purl.org/dc/terms/\
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{523.43998830020428, 165.54874368478801}, {137.21164367814981, 23.012640953063965}}</string>
+					<string>{{523.43998830020428, 159.54874368478801}, {137.21164367814981, 23.012640953063965}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -3878,7 +3872,7 @@ fabio:Work}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{519.04388990757184, 31.572811884455497}, {76.363261654226733, 16.854378350365323}}</string>
+					<string>{{519.04388990757184, 25.572811884455497}, {76.363261654226733, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -4009,12 +4003,12 @@ fr:isReplyTo}</string>
 					<key>OrthogonalBarPoint</key>
 					<string>{648.96602495712159, 418.29205840294895}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>9.4499981424874591</real>
+					<real>9.4499981424874626</real>
 					<key>Points</key>
 					<array>
-						<string>{497.67719584994234, 67.799997344613075}</string>
-						<string>{599.97228014444909, 40.000001059638159}</string>
-						<string>{570.23440129146411, 71.635430390135298}</string>
+						<string>{497.67719584994234, 61.799997344613082}</string>
+						<string>{599.97228014444909, 34.000001059638159}</string>
+						<string>{570.23440129146411, 65.635430390135298}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -4076,11 +4070,11 @@ fr:isReplyTo}</string>
 					<key>OrthogonalBarPoint</key>
 					<string>{551.74904812135469, 107.31303968268887}</string>
 					<key>OrthogonalBarPosition</key>
-					<real>6.6065703148072146</real>
+					<real>9.6065703148072146</real>
 					<key>Points</key>
 					<array>
 						<string>{691.920744776726, 254.08877564513315}</string>
-						<string>{592.04581286542964, 209.87563501551872}</string>
+						<string>{592.04581286542964, 203.87563501551872}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -4148,7 +4142,7 @@ fr:isReplyTo}</string>
 					<key>Points</key>
 					<array>
 						<string>{284.13598395313858, 249.11999443173409}</string>
-						<string>{592.04581286542964, 209.87563501551872}</string>
+						<string>{592.04581286542964, 203.87563501551872}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -4185,7 +4179,7 @@ fr:isReplyTo}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{369.35999174416065, 165.54874368478801}, {109.26576232910156, 23.012603759765625}}</string>
+					<string>{{369.35999174416065, 159.54874368478801}, {109.26576232910156, 23.012603759765625}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -5474,7 +5468,7 @@ dcterms:modified:: xsd:date}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{169.92864411388265, 160.95698755512757}, {109.26576232910156, 16.854378350365323}}</string>
+					<string>{{230.56402068291658, 154.95698755512757}, {109.26576232910156, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -5502,7 +5496,7 @@ dcterms:modified:: xsd:date}</string>
 						<key>ID</key>
 						<integer>42679</integer>
 						<key>Position</key>
-						<real>0.57436704635620117</real>
+						<real>0.7568915165874478</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -5609,7 +5603,7 @@ fr:isReviewOf (F)}</string>
 					<key>Points</key>
 					<array>
 						<string>{167.92541980352067, 308.14521783844089}</string>
-						<string>{369.35999174416065, 169.38417673031023}</string>
+						<string>{369.35999174416065, 163.38417673031023}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -8326,7 +8320,7 @@ datacite:IdentifierSchema}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{641.17108288543182, 78.549977854930262}, {134.99999698251486, 16.854378350365323}}</string>
+					<string>{{634.42938314428682, 72.549977854930262}, {134.99999698251486, 16.854378350365323}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -8461,8 +8455,8 @@ datacite:hasIdentifier (IF)}</string>
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{570.23440129146411, 86.977167030112923}</string>
-						<string>{890, 605}</string>
+						<string>{570.23440129146411, 80.977167030112923}</string>
+						<string>{890, 599}</string>
 						<string>{793.02386167972554, 706.26520960456708}</string>
 					</array>
 					<key>Style</key>
@@ -18353,15 +18347,15 @@ fr:RatingConceptScheme}</string>
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{58, 124}, {733, 728}}</string>
+		<string>{{-281, -140}, {1466, 1456}}</string>
 		<key>Zoom</key>
-		<real>1</real>
+		<real>0.5</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Vocabulary</string>
-				<real>1</real>
-				<real>1.2000000476837158</real>
+				<real>0.5</real>
+				<real>2</real>
 			</array>
 			<array>
 				<string>Confidence</string>
