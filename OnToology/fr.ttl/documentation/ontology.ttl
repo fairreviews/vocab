@@ -24,6 +24,22 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/creator
 <http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty ;
                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/creator> ;
@@ -259,6 +275,10 @@ xsd:date rdf:type rdfs:Datatype .
                                   rdfs:subClassOf <http://purl.org/spar/fabio/Endeavour> .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
 ###  http://www.w3.org/2004/02/skos/core#ConceptScheme
 <http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
 
@@ -414,6 +434,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-NA-WR-APP
 <https://w3id.org/fr/def/core#A-NA-WR-APP> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-4> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "Approved"@en ;
                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved"^^xsd:string .
@@ -422,6 +452,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-NA-WR-APPWR
 <https://w3id.org/fr/def/core#A-NA-WR-APPWR> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Approved with reservations"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved with reservations"^^xsd:string .
@@ -430,6 +464,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-NA-WR-NAPP
 <https://w3id.org/fr/def/core#A-NA-WR-NAPP> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Not approved"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Not approved"^^xsd:string .
@@ -445,6 +489,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-R-TS-ACC
 <https://w3id.org/fr/def/core#A-R-TS-ACC> rdf:type owl:NamedIndividual ,
                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
+                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-4> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
                                           <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
@@ -453,6 +507,9 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-R-TS-MAJREV
 <https://w3id.org/fr/def/core#A-R-TS-MAJREV> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-10-5> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-0> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Major revision"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Major revision"^^xsd:string .
@@ -461,6 +518,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-R-TS-MINREV
 <https://w3id.org/fr/def/core#A-R-TS-MINREV> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Minor revision"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Minor revision"^^xsd:string .
@@ -469,6 +530,16 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#A-R-TS-REJ
 <https://w3id.org/fr/def/core#A-R-TS-REJ> rdf:type owl:NamedIndividual ,
                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
+                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-1> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
                                           <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
@@ -500,6 +571,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5-ACL1
 <https://w3id.org/fr/def/core#ACL-1-5-ACL1> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL1> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-NULL> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess."@en ;
@@ -509,6 +582,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5-ACL2
 <https://w3id.org/fr/def/core#ACL-1-5-ACL2> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL2> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-LOW> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "2"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en ;
@@ -518,6 +593,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5-ACL3
 <https://w3id.org/fr/def/core#ACL-1-5-ACL3> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL3> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-MED> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "3"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en ;
@@ -527,6 +604,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5-ACL4
 <https://w3id.org/fr/def/core#ACL-1-5-ACL4> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL4> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-HIGH> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "4"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. "@en ;
@@ -536,6 +615,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#ACL-1-5-ACL5
 <https://w3id.org/fr/def/core#ACL-1-5-ACL5> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL5> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-EXP> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "5"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. "@en ;
@@ -552,6 +633,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-10-0
 <https://w3id.org/fr/def/core#DIS-0-10-0> rdf:type owl:NamedIndividual ,
                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
+                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                           <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
                                           <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
                                           <http://www.w3.org/2004/02/skos/core#definition> "0 out of 10"@en ;
@@ -570,6 +657,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-10-10
 <https://w3id.org/fr/def/core#DIS-0-10-10> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                            <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
                                            <https://w3id.org/fr/def/core#ratingValue> "10"^^xsd:int ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "10 out of 10"@en ;
@@ -606,6 +699,9 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-10-5
 <https://w3id.org/fr/def/core#DIS-0-10-5> rdf:type owl:NamedIndividual ,
                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
+                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
+                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-0> ,
+                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
                                           <https://w3id.org/fr/def/core#ratingValue> "5"^^xsd:int ;
                                           <http://www.w3.org/2004/02/skos/core#definition> "5 out of 10"@en ;
@@ -658,6 +754,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-0
 <https://w3id.org/fr/def/core#DIS-0-5-0> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                          <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "0 out of 5"@en ;
@@ -667,6 +769,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-1
 <https://w3id.org/fr/def/core#DIS-0-5-1> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                          <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "1"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "1 out of 5"@en ;
@@ -676,6 +783,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-2
 <https://w3id.org/fr/def/core#DIS-0-5-2> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#SA-SR-BL-WREJ> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-WREJ> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "2"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "2 out of 5"@en ;
@@ -685,6 +794,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-3
 <https://w3id.org/fr/def/core#DIS-0-5-3> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
+                                                                                          <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "3"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "3 out of 5"@en ;
@@ -694,6 +807,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-4
 <https://w3id.org/fr/def/core#DIS-0-5-4> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                          <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "4"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "4 out of 5"@en ;
@@ -703,6 +821,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-0-5-5
 <https://w3id.org/fr/def/core#DIS-0-5-5> rdf:type owl:NamedIndividual ,
                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
+                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                          <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
+                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
                                          <https://w3id.org/fr/def/core#ratingValue> "5"^^xsd:int ;
                                          <http://www.w3.org/2004/02/skos/core#definition> "5 out of 5"@en ;
@@ -719,6 +843,9 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-N2-P2-0
 <https://w3id.org/fr/def/core#DIS-N2-P2-0> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
+                                                                                            <https://w3id.org/fr/def/core#DIS-0-10-5> ,
+                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
                                            <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "0 on a [-2,2] scale"@en ;
@@ -728,6 +855,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-N2-P2-NEG1
 <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> rdf:type owl:NamedIndividual ,
                                                        <https://w3id.org/fr/def/core#RatingConcept> ;
+                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                               <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-1> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
                                               <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
                                               <https://w3id.org/fr/def/core#ratingValue> "-1"^^xsd:int ;
                                               <http://www.w3.org/2004/02/skos/core#definition> "-1 on a [-2,2] scale"@en ;
@@ -737,6 +869,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-N2-P2-NEG2
 <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> rdf:type owl:NamedIndividual ,
                                                        <https://w3id.org/fr/def/core#RatingConcept> ;
+                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                               <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                               <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
                                               <https://w3id.org/fr/def/core#ratingValue> "-2"^^xsd:int ;
                                               <http://www.w3.org/2004/02/skos/core#definition> "-2 on a [-2,2] scale"@en ;
@@ -746,6 +884,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-N2-P2-POS1
 <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> rdf:type owl:NamedIndividual ,
                                                        <https://w3id.org/fr/def/core#RatingConcept> ;
+                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                               <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-4> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
                                               <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
                                               <https://w3id.org/fr/def/core#ratingValue> "1"^^xsd:int ;
                                               <http://www.w3.org/2004/02/skos/core#definition> "1 on a [-2,2] scale"@en ;
@@ -755,6 +898,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#DIS-N2-P2-POS2
 <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> rdf:type owl:NamedIndividual ,
                                                        <https://w3id.org/fr/def/core#RatingConcept> ;
+                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                               <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
+                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                               <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
                                               <https://w3id.org/fr/def/core#ratingValue> "2"^^xsd:int ;
                                               <http://www.w3.org/2004/02/skos/core#definition> "2 on a [-2,2] scale"@en ;
@@ -771,6 +920,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#EX-NULL-EXP
 <https://w3id.org/fr/def/core#EX-NULL-EXP> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL5> ,
+                                                                                            <https://w3id.org/fr/def/core#EX-NULL-EXP> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
                                            <https://w3id.org/fr/def/core#confidenceValue> "4"^^xsd:int ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "Expert"@en ;
@@ -780,6 +931,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#EX-NULL-HIGH
 <https://w3id.org/fr/def/core#EX-NULL-HIGH> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL4> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-HIGH> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "3"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "High"@en ;
@@ -789,6 +942,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#EX-NULL-LOW
 <https://w3id.org/fr/def/core#EX-NULL-LOW> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL2> ,
+                                                                                            <https://w3id.org/fr/def/core#EX-NULL-LOW> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
                                            <https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "Low"@en ;
@@ -798,6 +953,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#EX-NULL-MED
 <https://w3id.org/fr/def/core#EX-NULL-MED> rdf:type owl:NamedIndividual ,
                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL3> ,
+                                                                                            <https://w3id.org/fr/def/core#EX-NULL-MED> ;
                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
                                            <https://w3id.org/fr/def/core#confidenceValue> "2"^^xsd:int ;
                                            <http://www.w3.org/2004/02/skos/core#definition> "Medium"@en ;
@@ -807,6 +964,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#EX-NULL-NULL
 <https://w3id.org/fr/def/core#EX-NULL-NULL> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#ConfidenceConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL1> ,
+                                                                                             <https://w3id.org/fr/def/core#EX-NULL-NULL> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
                                             <https://w3id.org/fr/def/core#confidenceValue> "0"^^xsd:int ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Null"@en ;
@@ -823,6 +982,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-ACC
 <https://w3id.org/fr/def/core#SA-SR-BL-ACC> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                             <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-4> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
@@ -831,6 +995,9 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-BDL
 <https://w3id.org/fr/def/core#SA-SR-BL-BDL> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-5> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-0> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Borderline"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Borderline"^^xsd:string .
@@ -839,6 +1006,11 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-REJ
 <https://w3id.org/fr/def/core#SA-SR-BL-REJ> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                             <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
@@ -847,6 +1019,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-SACC
 <https://w3id.org/fr/def/core#SA-SR-BL-SACC> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"^^xsd:string .
@@ -855,6 +1033,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-SREJ
 <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"^^xsd:string .
@@ -863,6 +1047,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-WACC
 <https://w3id.org/fr/def/core#SA-SR-BL-WACC> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"^^xsd:string .
@@ -871,6 +1059,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-BL-WREJ
 <https://w3id.org/fr/def/core#SA-SR-BL-WREJ> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-5-2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WREJ> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"^^xsd:string .
@@ -886,6 +1076,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-ACC
 <https://w3id.org/fr/def/core#SA-SR-NB-ACC> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                             <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-4> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
@@ -894,6 +1090,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-REJ
 <https://w3id.org/fr/def/core#SA-SR-NB-REJ> rdf:type owl:NamedIndividual ,
                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
+                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                             <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
+                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
+                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ;
                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                             <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
@@ -902,6 +1104,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-SACC
 <https://w3id.org/fr/def/core#SA-SR-NB-SACC> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-10> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-5> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"^^xsd:string .
@@ -910,6 +1118,12 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-SREJ
 <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-0> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-0> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"^^xsd:string .
@@ -918,6 +1132,10 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-WACC
 <https://w3id.org/fr/def/core#SA-SR-NB-WACC> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
+                                                                                              <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
+                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"^^xsd:string .
@@ -926,6 +1144,8 @@ xsd:date rdf:type rdfs:Datatype .
 ###  https://w3id.org/fr/def/core#SA-SR-NB-WREJ
 <https://w3id.org/fr/def/core#SA-SR-NB-WREJ> rdf:type owl:NamedIndividual ,
                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
+                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-5-2> ,
+                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WREJ> ;
                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
                                              <http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"^^xsd:string .
