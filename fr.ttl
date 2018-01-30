@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/fr/def/core#> .
+@prefix : <http://purl.org/spar/fr/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,7 +12,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://w3id.org/fr/def/core#> a owl:Ontology ;
+<http://purl.org/spar/fr> a owl:Ontology ;
 	owl:imports <http://purl.org/spar/datacite/> ;
 	rdfs:comment "This vocabulary represents scientific reviews. This model is used to annotate http://fairreviews.linkeddata.es/ data."@en ;
 	owl:versionInfo "0.1.0" ;
@@ -21,7 +21,7 @@
 	dc:creator <https://w3id.org/people/idafensp> ;
 	dcterms:issued "2017-11-07"^^xsd:date ;
 	dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-	vann:preferredNamespaceUri "https://w3id.org/fr/def/core#" ;
+	vann:preferredNamespaceUri "http://purl.org/spar/fr/" ;
 	dc:title "FAIR reviews ontology"@en ;
 	dc:publisher <http://www.oeg-upm.net/> ;
 	vann:preferredNamespacePrefix "fr"^^xsd:date ;
@@ -131,7 +131,7 @@ dcterms:license a owl:ObjectProperty .
 
 <http://www.w3.org/2004/02/skos/core#inScheme> a owl:ObjectProperty .
 # 
-# https://w3id.org/fr/def/core#hasRating
+# http://purl.org/spar/fr/hasRating
 
 :hasRating a owl:ObjectProperty ;
 	rdfs:domain :Review ;
@@ -139,7 +139,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "The relation between a review and a given rating assigned by a reviewer."@en ;
 	rdfs:label "has rating"@en .
 # 
-# https://w3id.org/fr/def/core#hasReview
+# http://purl.org/spar/fr/hasReview
 
 :hasReview a owl:ObjectProperty ;
 	owl:inverseOf :isReviewOf ;
@@ -149,7 +149,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "Relation between a scientific contribution and the reviews issued for it."@en ;
 	rdfs:label "has review"@en .
 # 
-# https://w3id.org/fr/def/core#hasReviewerConfidence
+# http://purl.org/spar/fr/hasReviewerConfidence
 
 :hasReviewerConfidence a owl:ObjectProperty ;
 	rdfs:domain :Review ;
@@ -157,14 +157,14 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution." ;
 	rdfs:label "has reviewer confidence"@en .
 # 
-# https://w3id.org/fr/def/core#hasSubReviewer
+# http://purl.org/spar/fr/hasSubReviewer
 
 :hasSubReviewer a owl:ObjectProperty ;
 	rdfs:domain :Review ;
 	rdfs:range foaf:Agent ;
 	rdfs:label "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en , "has sub-reviewer"@en .
 # 
-# https://w3id.org/fr/def/core#isReplyTo
+# http://purl.org/spar/fr/isReplyTo
 
 :isReplyTo a owl:ObjectProperty ;
 	rdfs:domain <http://purl.org/spar/fabio/Endeavour> ;
@@ -172,7 +172,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "The relation between a given endeavour and the endeavour that it is replying to. For example, the relation between a reply and a given review."@en ;
 	rdfs:label "is reply to"@en .
 # 
-# https://w3id.org/fr/def/core#isReviewOf
+# http://purl.org/spar/fr/isReviewOf
 
 :isReviewOf a owl:ObjectProperty , owl:FunctionalProperty ;
 	rdfs:domain :Review ;
@@ -180,7 +180,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "The relation between a review and the scientific contribution that is subject of the review."@en ;
 	rdfs:label "is review of"@en .
 # 
-# https://w3id.org/fr/def/core#issuedAt
+# http://purl.org/spar/fr/issuedAt
 
 :issuedAt a owl:ObjectProperty ;
 	rdfs:domain :Review ;
@@ -188,7 +188,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "The relation between a review and the tracking or scholarly venue management system where the reviewing process took place."@en ;
 	rdfs:label "issued at"@en .
 # 
-# https://w3id.org/fr/def/core#issuedFor
+# http://purl.org/spar/fr/issuedFor
 
 :issuedFor a owl:ObjectProperty ;
 	rdfs:domain :Review ;
@@ -196,7 +196,7 @@ dcterms:license a owl:ObjectProperty .
 	rdfs:comment "The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review)."@en ;
 	rdfs:label "issued for"@en .
 # 
-# https://w3id.org/fr/def/core#releasedBy
+# http://purl.org/spar/fr/releasedBy
 
 :releasedBy a owl:ObjectProperty ;
 	rdfs:domain :Review ;
@@ -227,7 +227,7 @@ dcterms:modified a owl:DatatypeProperty .
 	rdfs:domain <http://purl.org/spar/fabio/Endeavour> ;
 	rdfs:range xsd:anyURI .
 # 
-# https://w3id.org/fr/def/core#confidenceValue
+# http://purl.org/spar/fr/confidenceValue
 
 :confidenceValue a owl:DatatypeProperty ;
 	rdfs:domain :ConfidenceConcept ;
@@ -235,7 +235,7 @@ dcterms:modified a owl:DatatypeProperty .
 	rdfs:comment "Confidence value of expertise in the review topic given by the reviwer"@en ;
 	rdfs:label "confidence value"@en .
 # 
-# https://w3id.org/fr/def/core#content
+# http://purl.org/spar/fr/content
 
 :content a owl:DatatypeProperty ;
 	rdfs:domain <http://purl.org/spar/fabio/Work> ;
@@ -243,7 +243,7 @@ dcterms:modified a owl:DatatypeProperty .
 	rdfs:comment "Content of the review."@en ;
 	rdfs:label "content"@en .
 # 
-# https://w3id.org/fr/def/core#ratingValue
+# http://purl.org/spar/fr/ratingValue
 
 :ratingValue a owl:DatatypeProperty ;
 	rdfs:domain :RatingConcept ;
@@ -329,56 +329,56 @@ foaf:Person a owl:Class ;
 	rdfs:subClassOf foaf:Agent ;
 	rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 # 
-# https://w3id.org/fr/def/core#ConfidenceConcept
+# http://purl.org/spar/fr/ConfidenceConcept
 
 :ConfidenceConcept a owl:Class ;
 	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 	rdfs:comment "The set of values of a given confidence scale."@en ;
 	rdfs:label "Confidence concept"@en .
 # 
-# https://w3id.org/fr/def/core#ConfidenceConceptScheme
+# http://purl.org/spar/fr/ConfidenceConceptScheme
 
 :ConfidenceConceptScheme a owl:Class ;
 	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
 	rdfs:comment "A scale defining the confidence of a reviewer for a given topic."@en ;
 	rdfs:label "Confidence concept scheme"@en .
 # 
-# https://w3id.org/fr/def/core#ConveningOrganization
+# http://purl.org/spar/fr/ConveningOrganization
 
 :ConveningOrganization a owl:Class ;
 	rdfs:subClassOf foaf:Agent ;
 	rdfs:comment "A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions."@en ;
 	rdfs:label "Convening organization"@en .
 # 
-# https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme
+# http://purl.org/spar/fr/DiscreteConfidenceConceptScheme
 
 :DiscreteConfidenceConceptScheme a owl:Class ;
 	rdfs:subClassOf :ConfidenceConceptScheme ;
 	rdfs:comment "A discrete scale defining the confidence of a reviewer for a given topic."@en ;
 	rdfs:label "Discrete confidence concept scheme"@en .
 # 
-# https://w3id.org/fr/def/core#DiscreteRatingConceptScheme
+# http://purl.org/spar/fr/DiscreteRatingConceptScheme
 
 :DiscreteRatingConceptScheme a owl:Class ;
 	rdfs:subClassOf :RatingConceptScheme ;
 	rdfs:comment "A discrete scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
 	rdfs:label "Discrete rating concept scheme"@en .
 # 
-# https://w3id.org/fr/def/core#RatingConcept
+# http://purl.org/spar/fr/RatingConcept
 
 :RatingConcept a owl:Class ;
 	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 	rdfs:comment "The set of values of a given rating scale."@en ;
 	rdfs:label "Rating concept"@en .
 # 
-# https://w3id.org/fr/def/core#RatingConceptScheme
+# http://purl.org/spar/fr/RatingConceptScheme
 
 :RatingConceptScheme a owl:Class ;
 	rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
 	rdfs:comment "A scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
 	rdfs:label "Rating concept scheme"@en .
 # 
-# https://w3id.org/fr/def/core#Reply
+# http://purl.org/spar/fr/Reply
 
 :Reply a owl:Class ;
 	rdfs:subClassOf <http://purl.org/spar/fabio/Reply> , _:genid1 .
@@ -408,7 +408,7 @@ _:genid4 a owl:Restriction ;
 :Reply rdfs:comment "A reply to a review or another endeavour."@en ;
 	rdfs:label "Reply"@en .
 # 
-# https://w3id.org/fr/def/core#Review
+# http://purl.org/spar/fr/Review
 
 :Review a owl:Class ;
 	rdfs:subClassOf <http://purl.org/spar/fabio/Review> , _:genid5 .
@@ -451,7 +451,7 @@ _:genid10 a owl:Restriction ;
 :Review rdfs:comment "A review of a scientific contribution."@en ;
 	rdfs:label "Review"@en .
 # 
-# https://w3id.org/fr/def/core#TrackingSystem
+# http://purl.org/spar/fr/TrackingSystem
 
 :TrackingSystem a owl:Class ;
 	rdfs:subClassOf <http://purl.org/spar/bido/ScholarlyVenueManagementSystem> ;
@@ -471,17 +471,17 @@ _:genid10 a owl:Restriction ;
 
 <http://purl.org/NET/rdflicense/cc-by4.0> a owl:NamedIndividual .
 # 
-# https://w3id.org/fr/def/core#
+# http://purl.org/spar/fr/
 
-<https://w3id.org/fr/def/core#> a owl:NamedIndividual .
+<http://purl.org/spar/fr/> a owl:NamedIndividual .
 # 
-# https://w3id.org/fr/def/core#A-NA-WR
+# http://purl.org/spar/fr/A-NA-WR
 
 :A-NA-WR a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Approved to Not Approved, including Aprproved With Reservations, "@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Approved to Not Approved"@en .
 # 
-# https://w3id.org/fr/def/core#A-NA-WR-APP
+# http://purl.org/spar/fr/A-NA-WR-APP
 
 :A-NA-WR-APP a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-ACC , :DIS-0-10-10 , :DIS-0-5-4 , :DIS-0-5-5 , :DIS-N2-P2-POS1 , :DIS-N2-P2-POS2 , :SA-SR-BL-ACC , :SA-SR-BL-SACC , :SA-SR-NB-ACC , :SA-SR-NB-SACC ;
@@ -489,7 +489,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Approved"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Approved" .
 # 
-# https://w3id.org/fr/def/core#A-NA-WR-APPWR
+# http://purl.org/spar/fr/A-NA-WR-APPWR
 
 :A-NA-WR-APPWR a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-MINREV , :DIS-0-5-3 , :SA-SR-BL-WACC , :SA-SR-NB-WACC ;
@@ -497,7 +497,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Approved with reservations"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Approved with reservations" .
 # 
-# https://w3id.org/fr/def/core#A-NA-WR-NAPP
+# http://purl.org/spar/fr/A-NA-WR-NAPP
 
 :A-NA-WR-NAPP a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-REJ , :DIS-0-10-0 , :DIS-0-5-0 , :DIS-0-5-1 , :DIS-N2-P2-NEG1 , :DIS-N2-P2-NEG2 , :SA-SR-BL-REJ , :SA-SR-BL-SREJ , :SA-SR-NB-REJ , :SA-SR-NB-SREJ ;
@@ -505,13 +505,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Not approved"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Not approved" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS
+# http://purl.org/spar/fr/A-R-TS
 
 :A-R-TS a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Accept to Reject, including pre-screening and two strikes rule"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Accept to Reject, Two Strikes"@en .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-ACC
+# http://purl.org/spar/fr/A-R-TS-ACC
 
 :A-R-TS-ACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :DIS-0-10-10 , :DIS-0-5-4 , :DIS-0-5-5 , :DIS-N2-P2-POS1 , :DIS-N2-P2-POS2 , :SA-SR-BL-ACC , :SA-SR-BL-SACC , :SA-SR-NB-ACC , :SA-SR-NB-SACC ;
@@ -519,7 +519,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Accept" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-MAJREV
+# http://purl.org/spar/fr/A-R-TS-MAJREV
 
 :A-R-TS-MAJREV a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :DIS-0-10-5 , :DIS-N2-P2-0 , :SA-SR-BL-BDL ;
@@ -527,7 +527,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Major revision"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Major revision" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-MINREV
+# http://purl.org/spar/fr/A-R-TS-MINREV
 
 :A-R-TS-MINREV a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APPWR , :DIS-0-5-3 , :SA-SR-BL-WACC , :SA-SR-NB-WACC ;
@@ -535,7 +535,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Minor revision"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Minor revision" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-REJ
+# http://purl.org/spar/fr/A-R-TS-REJ
 
 :A-R-TS-REJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :DIS-0-10-0 , :DIS-0-5-0 , :DIS-0-5-1 , :DIS-N2-P2-NEG1 , :DIS-N2-P2-NEG2 , :SA-SR-BL-REJ , :SA-SR-BL-SREJ , :SA-SR-NB-REJ , :SA-SR-NB-SREJ ;
@@ -543,27 +543,27 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reject" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-REJPS
+# http://purl.org/spar/fr/A-R-TS-REJPS
 
 :A-R-TS-REJPS a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :A-R-TS ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reject (Pre-Screening)"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Pre-Screening)" .
 # 
-# https://w3id.org/fr/def/core#A-R-TS-REJTS
+# http://purl.org/spar/fr/A-R-TS-REJTS
 
 :A-R-TS-REJTS a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :A-R-TS ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reject (Two Strikes)"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Two Strikes)" .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5
+# http://purl.org/spar/fr/ACL-1-5
 
 :ACL-1-5 a owl:NamedIndividual , :DiscreteConfidenceConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 1 to 5"@en .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5-ACL1
+# http://purl.org/spar/fr/ACL-1-5-ACL1
 
 :ACL-1-5-ACL1 a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL1 , :EX-NULL-NULL ;
@@ -572,7 +572,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess."@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5" .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5-ACL2
+# http://purl.org/spar/fr/ACL-1-5-ACL2
 
 :ACL-1-5-ACL2 a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL2 , :EX-NULL-LOW ;
@@ -581,7 +581,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5" .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5-ACL3
+# http://purl.org/spar/fr/ACL-1-5-ACL3
 
 :ACL-1-5-ACL3 a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL3 , :EX-NULL-MED ;
@@ -590,7 +590,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5" .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5-ACL4
+# http://purl.org/spar/fr/ACL-1-5-ACL4
 
 :ACL-1-5-ACL4 a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL4 , :EX-NULL-HIGH ;
@@ -599,7 +599,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. "@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5" .
 # 
-# https://w3id.org/fr/def/core#ACL-1-5-ACL5
+# http://purl.org/spar/fr/ACL-1-5-ACL5
 
 :ACL-1-5-ACL5 a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL5 , :EX-NULL-EXP ;
@@ -608,13 +608,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. "@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10
+# http://purl.org/spar/fr/DIS-0-10
 
 :DIS-0-10 a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 0 to 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 0 to 10"@en .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-0
+# http://purl.org/spar/fr/DIS-0-10-0
 
 :DIS-0-10-0 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-5-0 , :DIS-N2-P2-NEG2 , :SA-SR-BL-SREJ , :SA-SR-NB-SREJ ;
@@ -623,7 +623,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "0 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-1
+# http://purl.org/spar/fr/DIS-0-10-1
 
 :DIS-0-10-1 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -631,7 +631,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "1 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-10
+# http://purl.org/spar/fr/DIS-0-10-10
 
 :DIS-0-10-10 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-5-5 , :DIS-N2-P2-POS2 , :SA-SR-BL-SACC , :SA-SR-NB-SACC ;
@@ -640,7 +640,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "10 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "10 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-2
+# http://purl.org/spar/fr/DIS-0-10-2
 
 :DIS-0-10-2 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -648,7 +648,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "2 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-3
+# http://purl.org/spar/fr/DIS-0-10-3
 
 :DIS-0-10-3 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -656,7 +656,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "3 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-4
+# http://purl.org/spar/fr/DIS-0-10-4
 
 :DIS-0-10-4 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -664,7 +664,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "4 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-5
+# http://purl.org/spar/fr/DIS-0-10-5
 
 :DIS-0-10-5 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-MAJREV , :DIS-N2-P2-0 , :SA-SR-BL-BDL ;
@@ -673,7 +673,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "5 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-6
+# http://purl.org/spar/fr/DIS-0-10-6
 
 :DIS-0-10-6 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -681,7 +681,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "6 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "6 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-7
+# http://purl.org/spar/fr/DIS-0-10-7
 
 :DIS-0-10-7 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -689,7 +689,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "7 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "7 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-8
+# http://purl.org/spar/fr/DIS-0-10-8
 
 :DIS-0-10-8 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -697,7 +697,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "8 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "8 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-10-9
+# http://purl.org/spar/fr/DIS-0-10-9
 
 :DIS-0-10-9 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#inScheme> :DIS-0-10 ;
@@ -705,13 +705,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "9 out of 10"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "9 out of 10" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5
+# http://purl.org/spar/fr/DIS-0-5
 
 :DIS-0-5 a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 0 to 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 0 to 5"@en .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-0
+# http://purl.org/spar/fr/DIS-0-5-0
 
 :DIS-0-5-0 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-10-0 , :DIS-N2-P2-NEG2 , :SA-SR-BL-SREJ , :SA-SR-NB-SREJ ;
@@ -720,7 +720,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "0 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-1
+# http://purl.org/spar/fr/DIS-0-5-1
 
 :DIS-0-5-1 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-N2-P2-NEG1 , :SA-SR-BL-REJ , :SA-SR-NB-REJ ;
@@ -729,7 +729,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "1 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-2
+# http://purl.org/spar/fr/DIS-0-5-2
 
 :DIS-0-5-2 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :SA-SR-BL-WREJ , :SA-SR-NB-WREJ ;
@@ -738,7 +738,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "2 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-3
+# http://purl.org/spar/fr/DIS-0-5-3
 
 :DIS-0-5-3 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APPWR , :A-R-TS-MINREV , :SA-SR-BL-WACC , :SA-SR-NB-WACC ;
@@ -747,7 +747,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "3 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-4
+# http://purl.org/spar/fr/DIS-0-5-4
 
 :DIS-0-5-4 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-N2-P2-POS1 , :SA-SR-BL-ACC , :SA-SR-NB-ACC ;
@@ -756,7 +756,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "4 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-0-5-5
+# http://purl.org/spar/fr/DIS-0-5-5
 
 :DIS-0-5-5 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-10-10 , :DIS-N2-P2-POS2 , :SA-SR-BL-SACC , :SA-SR-NB-SACC ;
@@ -765,13 +765,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "5 out of 5"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5" .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2
+# http://purl.org/spar/fr/DIS-N2-P2
 
 :DIS-N2-P2 a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from -2 to 2, including 0"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete -2 to 2"@en .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2-0
+# http://purl.org/spar/fr/DIS-N2-P2-0
 
 :DIS-N2-P2-0 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-MAJREV , :DIS-0-10-5 , :SA-SR-BL-BDL ;
@@ -780,7 +780,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "0 on a [-2,2] scale"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 on a [-2,2] scale" .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2-NEG1
+# http://purl.org/spar/fr/DIS-N2-P2-NEG1
 
 :DIS-N2-P2-NEG1 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-5-1 , :SA-SR-BL-REJ , :SA-SR-NB-REJ ;
@@ -789,7 +789,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "-1 on a [-2,2] scale"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "-1 on a [-2,2] scale" .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2-NEG2
+# http://purl.org/spar/fr/DIS-N2-P2-NEG2
 
 :DIS-N2-P2-NEG2 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-10-0 , :DIS-0-5-0 , :SA-SR-BL-SREJ , :SA-SR-NB-SREJ ;
@@ -798,7 +798,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "-2 on a [-2,2] scale"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "-2 on a [-2,2] scale" .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2-POS1
+# http://purl.org/spar/fr/DIS-N2-P2-POS1
 
 :DIS-N2-P2-POS1 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-5-4 , :SA-SR-BL-ACC , :SA-SR-NB-ACC ;
@@ -807,7 +807,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "1 on a [-2,2] scale"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "1 on a [-2,2] scale" .
 # 
-# https://w3id.org/fr/def/core#DIS-N2-P2-POS2
+# http://purl.org/spar/fr/DIS-N2-P2-POS2
 
 :DIS-N2-P2-POS2 a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-10-10 , :DIS-0-5-5 , :SA-SR-BL-SACC , :SA-SR-NB-SACC ;
@@ -816,13 +816,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "2 on a [-2,2] scale"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "2 on a [-2,2] scale" .
 # 
-# https://w3id.org/fr/def/core#EX-NULL
+# http://purl.org/spar/fr/EX-NULL
 
 :EX-NULL a owl:NamedIndividual , :DiscreteConfidenceConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Expert to Null, also representend in an scale from 4 to 0"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Expert to Null"@en .
 # 
-# https://w3id.org/fr/def/core#EX-NULL-EXP
+# http://purl.org/spar/fr/EX-NULL-EXP
 
 :EX-NULL-EXP a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL5 , :EX-NULL-EXP ;
@@ -831,7 +831,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Expert"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Expert" .
 # 
-# https://w3id.org/fr/def/core#EX-NULL-HIGH
+# http://purl.org/spar/fr/EX-NULL-HIGH
 
 :EX-NULL-HIGH a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL4 , :EX-NULL-HIGH ;
@@ -840,7 +840,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "High"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "High" .
 # 
-# https://w3id.org/fr/def/core#EX-NULL-LOW
+# http://purl.org/spar/fr/EX-NULL-LOW
 
 :EX-NULL-LOW a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL2 , :EX-NULL-LOW ;
@@ -849,7 +849,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Low"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Low" .
 # 
-# https://w3id.org/fr/def/core#EX-NULL-MED
+# http://purl.org/spar/fr/EX-NULL-MED
 
 :EX-NULL-MED a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL3 , :EX-NULL-MED ;
@@ -858,7 +858,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Medium"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Medium" .
 # 
-# https://w3id.org/fr/def/core#EX-NULL-NULL
+# http://purl.org/spar/fr/EX-NULL-NULL
 
 :EX-NULL-NULL a owl:NamedIndividual , :ConfidenceConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :ACL-1-5-ACL1 , :EX-NULL-NULL ;
@@ -867,13 +867,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Null"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Null" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL
+# http://purl.org/spar/fr/SA-SR-BL
 
 :SA-SR-BL a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Strong Reject to Strong Accept, including Bordeline"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "St. Reject to St. Accept"@en .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-ACC
+# http://purl.org/spar/fr/SA-SR-BL-ACC
 
 :SA-SR-BL-ACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-5-4 , :DIS-N2-P2-POS1 , :SA-SR-NB-ACC ;
@@ -881,7 +881,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-BDL
+# http://purl.org/spar/fr/SA-SR-BL-BDL
 
 :SA-SR-BL-BDL a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-R-TS-MAJREV , :DIS-0-10-5 , :DIS-N2-P2-0 ;
@@ -889,7 +889,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Borderline"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Borderline" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-REJ
+# http://purl.org/spar/fr/SA-SR-BL-REJ
 
 :SA-SR-BL-REJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-5-1 , :DIS-N2-P2-NEG1 , :SA-SR-NB-REJ ;
@@ -897,7 +897,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reject" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-SACC
+# http://purl.org/spar/fr/SA-SR-BL-SACC
 
 :SA-SR-BL-SACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-10-10 , :DIS-0-5-5 , :DIS-N2-P2-POS2 , :SA-SR-NB-SACC ;
@@ -905,7 +905,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-SREJ
+# http://purl.org/spar/fr/SA-SR-BL-SREJ
 
 :SA-SR-BL-SREJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-10-0 , :DIS-0-5-0 , :DIS-N2-P2-NEG2 , :SA-SR-NB-SREJ ;
@@ -913,7 +913,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-WACC
+# http://purl.org/spar/fr/SA-SR-BL-WACC
 
 :SA-SR-BL-WACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APPWR , :A-R-TS-MINREV , :DIS-0-5-3 , :SA-SR-NB-WACC ;
@@ -921,7 +921,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-BL-WREJ
+# http://purl.org/spar/fr/SA-SR-BL-WREJ
 
 :SA-SR-BL-WREJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :DIS-0-5-2 , :SA-SR-NB-WREJ ;
@@ -929,13 +929,13 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB
+# http://purl.org/spar/fr/SA-SR-NB
 
 :SA-SR-NB a owl:NamedIndividual , :DiscreteRatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Strong Reject to Strong Accept, excluding Bordeline"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "St. Reject to St. Accept, without Borderline"@en .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-ACC
+# http://purl.org/spar/fr/SA-SR-NB-ACC
 
 :SA-SR-NB-ACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-10-10 , :DIS-0-5-4 , :DIS-N2-P2-POS1 , :SA-SR-BL-ACC ;
@@ -943,7 +943,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-REJ
+# http://purl.org/spar/fr/SA-SR-NB-REJ
 
 :SA-SR-NB-REJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-10-0 , :DIS-0-5-1 , :DIS-N2-P2-NEG1 , :SA-SR-BL-REJ ;
@@ -951,7 +951,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Reject" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-SACC
+# http://purl.org/spar/fr/SA-SR-NB-SACC
 
 :SA-SR-NB-SACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APP , :A-R-TS-ACC , :DIS-0-10-10 , :DIS-0-5-5 , :DIS-N2-P2-POS2 , :SA-SR-BL-SACC ;
@@ -959,7 +959,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-SREJ
+# http://purl.org/spar/fr/SA-SR-NB-SREJ
 
 :SA-SR-NB-SREJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-NAPP , :A-R-TS-REJ , :DIS-0-10-0 , :DIS-0-5-0 , :DIS-N2-P2-NEG2 , :SA-SR-BL-SREJ ;
@@ -967,7 +967,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-WACC
+# http://purl.org/spar/fr/SA-SR-NB-WACC
 
 :SA-SR-NB-WACC a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :A-NA-WR-APPWR , :A-R-TS-MINREV , :DIS-0-5-3 , :SA-SR-BL-WACC ;
@@ -975,7 +975,7 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept" .
 # 
-# https://w3id.org/fr/def/core#SA-SR-NB-WREJ
+# http://purl.org/spar/fr/SA-SR-NB-WREJ
 
 :SA-SR-NB-WREJ a owl:NamedIndividual , :RatingConcept ;
 	<http://www.w3.org/2004/02/skos/core#closeMatch> :DIS-0-5-2 , :SA-SR-BL-WREJ ;
@@ -983,17 +983,17 @@ _:genid10 a owl:Restriction ;
 	<http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject" .
 # 
-# https://w3id.org/fr/def/core#0To10Continuos
+# http://purl.org/spar/fr/0To10Continuos
 
 :0To10Continuos a owl:NamedIndividual , :RatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 10 continuos"@en .
 # 
-# https://w3id.org/fr/def/core#0To15Continuos
+# http://purl.org/spar/fr/0To15Continuos
 
 :0To15Continuos a owl:NamedIndividual , :RatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 15 continuos"@en .
 # 
-# https://w3id.org/fr/def/core#0To5Continuos
+# http://purl.org/spar/fr/0To5Continuos
 
 :0To5Continuos a owl:NamedIndividual , :RatingConceptScheme ;
 	<http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 5 continuos"@en .
