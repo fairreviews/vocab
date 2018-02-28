@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/fr/def/core#"
-     xml:base="https://w3id.org/fr/def/core"
-     xmlns:core="https://w3id.org/fr/def/core#"
+<rdf:RDF xmlns="http://purl.org/spar/fr#"
+     xml:base="http://purl.org/spar/fr"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -11,7 +10,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="https://w3id.org/fr/def/core#">
+    <owl:Ontology rdf:about="http://purl.org/spar/fr">
         <owl:imports rdf:resource="http://purl.org/spar/datacite/"/>
         <dc:creator rdf:resource="https://w3id.org/people/idafensp"/>
         <dc:creator rdf:resource="https://w3id.org/people/mpoveda"/>
@@ -21,9 +20,10 @@
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-07</terms:issued>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-03</terms:modified>
         <vann:preferredNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#date">fr</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://w3id.org/fr/def/core#</vann:preferredNamespaceUri>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/spar/fr/</vann:preferredNamespaceUri>
         <rdfs:comment xml:lang="en">This vocabulary represents scientific reviews. This model is used to annotate http://fairreviews.linkeddata.es/ data.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1.0</owl:versionInfo>
+        <owl:priorVersion rdf:resource="https://w3id.org/fr/def/core#"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -184,6 +184,78 @@
     
 
 
+    <!-- http://purl.org/spar/fr/hasRating -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/hasRating">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fr/RatingConcept"/>
+        <rdfs:comment xml:lang="en">The relation between a review and a given rating assigned by a reviewer.</rdfs:comment>
+        <rdfs:label xml:lang="en">has rating</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/fr/hasReviewerConfidence -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/hasReviewerConfidence">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fr/ConfidenceConcept"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reviewer confidence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/fr/hasSubReviewer -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/hasSubReviewer">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">The relation between a review and agents that have contributed to the overall review as sub-reviwers.</rdfs:label>
+        <rdfs:label xml:lang="en">has sub-reviewer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/fr/issuedAt -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/issuedAt">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fr/TrackingSystem"/>
+        <rdfs:comment xml:lang="en">The relation between a review and the tracking or scholarly venue management system where the reviewing process took place.</rdfs:comment>
+        <rdfs:label xml:lang="en">issued at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/fr/issuedFor -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/issuedFor">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://purl.org/spar/fr/ConveningOrganization"/>
+        <rdfs:comment xml:lang="en">The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review).</rdfs:comment>
+        <rdfs:label xml:lang="en">issued for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spar/fr/releasedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spar/fr/releasedBy">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Review"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to.</rdfs:comment>
+        <rdfs:label xml:lang="en">released by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
 
 
@@ -195,117 +267,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme"/>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#hasRating -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasRating">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <rdfs:comment xml:lang="en">The relation between a review and a given rating assigned by a reviewer.</rdfs:comment>
-        <rdfs:label xml:lang="en">has rating</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#hasReview -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasReview">
-        <owl:inverseOf rdf:resource="https://w3id.org/fr/def/core#isReviewOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Expression"/>
-        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:comment xml:lang="en">Relation between a scientific contribution and the reviews issued for it.</rdfs:comment>
-        <rdfs:label xml:lang="en">has review</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#hasReviewerConfidence -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasReviewerConfidence">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution.</rdfs:comment>
-        <rdfs:label xml:lang="en">has reviewer confidence</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#hasSubReviewer -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#hasSubReviewer">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rdfs:label xml:lang="en">The relation between a review and agents that have contributed to the overall review as sub-reviwers.</rdfs:label>
-        <rdfs:label xml:lang="en">has sub-reviewer</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#isReplyTo -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#isReplyTo">
-        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Endeavour"/>
-        <rdfs:range rdf:resource="http://purl.org/spar/fabio/Endeavour"/>
-        <rdfs:comment xml:lang="en">The relation between a given endeavour and the endeavour that it is replying to. For example, the relation between a reply and a given review.</rdfs:comment>
-        <rdfs:label xml:lang="en">is reply to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#isReviewOf -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#isReviewOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="http://purl.org/spar/fabio/Expression"/>
-        <rdfs:comment xml:lang="en">The relation between a review and the scientific contribution that is subject of the review.</rdfs:comment>
-        <rdfs:label xml:lang="en">is review of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#issuedAt -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#issuedAt">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#TrackingSystem"/>
-        <rdfs:comment xml:lang="en">The relation between a review and the tracking or scholarly venue management system where the reviewing process took place.</rdfs:comment>
-        <rdfs:label xml:lang="en">issued at</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#issuedFor -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#issuedFor">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="https://w3id.org/fr/def/core#ConveningOrganization"/>
-        <rdfs:comment xml:lang="en">The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review).</rdfs:comment>
-        <rdfs:label xml:lang="en">issued for</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#releasedBy -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/fr/def/core#releasedBy">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#Review"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rdfs:comment xml:lang="en">The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to.</rdfs:comment>
-        <rdfs:label xml:lang="en">released by</rdfs:label>
-    </owl:ObjectProperty>
     
 
 
@@ -345,11 +306,11 @@
     
 
 
-    <!-- https://w3id.org/fr/def/core#confidenceValue -->
+    <!-- http://purl.org/spar/fr/confidenceValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fr/def/core#confidenceValue">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/spar/fr/confidenceValue">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fr/ConfidenceConcept"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="en">Confidence value of expertise in the review topic given by the reviwer</rdfs:comment>
         <rdfs:label xml:lang="en">confidence value</rdfs:label>
@@ -357,23 +318,11 @@
     
 
 
-    <!-- https://w3id.org/fr/def/core#content -->
+    <!-- http://purl.org/spar/fr/ratingValue -->
 
 
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fr/def/core#content">
-        <rdfs:domain rdf:resource="http://purl.org/spar/fabio/Work"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Content of the review.</rdfs:comment>
-        <rdfs:label xml:lang="en">content</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ratingValue -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/fr/def/core#ratingValue">
-        <rdfs:domain rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/spar/fr/ratingValue">
+        <rdfs:domain rdf:resource="http://purl.org/spar/fr/RatingConcept"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="en">Numerical value of the rating given to a review.</rdfs:comment>
         <rdfs:label xml:lang="en">rating value</rdfs:label>
@@ -427,6 +376,13 @@
     
 
 
+    <!-- http://purl.org/spar/fabio/Comment -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fabio/Comment"/>
+    
+
+
     <!-- http://purl.org/spar/fabio/Endeavour -->
 
 
@@ -466,6 +422,105 @@
 
     <owl:Class rdf:about="http://purl.org/spar/fabio/Work">
         <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Endeavour"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/ConfidenceConcept -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/ConfidenceConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The set of values of a given confidence scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">Confidence concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/ConfidenceConceptScheme -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/ConfidenceConceptScheme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">A scale defining the confidence of a reviewer for a given topic.</rdfs:comment>
+        <rdfs:label xml:lang="en">Confidence concept scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/ConveningOrganization -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/ConveningOrganization">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:comment xml:lang="en">A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Convening organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/DiscreteConfidenceConceptScheme -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/DiscreteConfidenceConceptScheme">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fr/ConfidenceConceptScheme"/>
+        <rdfs:comment xml:lang="en">A discrete scale defining the confidence of a reviewer for a given topic.</rdfs:comment>
+        <rdfs:label xml:lang="en">Discrete confidence concept scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/DiscreteRatingConceptScheme -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/DiscreteRatingConceptScheme">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fr/RatingConceptScheme"/>
+        <rdfs:comment xml:lang="en">A discrete scale defining the rating given by a reviewer for a specific scientific contribution.</rdfs:comment>
+        <rdfs:label xml:lang="en">Discrete rating concept scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/RatingConcept -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/RatingConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">The set of values of a given rating scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rating concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/RatingConceptScheme -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/RatingConceptScheme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">A scale defining the rating given by a reviewer for a specific scientific contribution.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rating concept scheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/ReviewVersion -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/ReviewVersion">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Comment"/>
+        <rdfs:comment xml:lang="en">A version of a given review, defining its content and rating, which may vary over the time .</rdfs:comment>
+        <rdfs:label xml:lang="en">Review Version</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spar/fr/TrackingSystem -->
+
+
+    <owl:Class rdf:about="http://purl.org/spar/fr/TrackingSystem">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/ScholarlyVenueManagementSystem"/>
+        <rdfs:comment xml:lang="en">The platform where the review process takes place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Tracking system</rdfs:label>
     </owl:Class>
     
 
@@ -513,177 +568,6 @@
     
 
 
-    <!-- https://w3id.org/fr/def/core#ConfidenceConcept -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#ConfidenceConcept">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:comment xml:lang="en">The set of values of a given confidence scale.</rdfs:comment>
-        <rdfs:label xml:lang="en">Confidence concept</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ConfidenceConceptScheme -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#ConfidenceConceptScheme">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:comment xml:lang="en">A scale defining the confidence of a reviewer for a given topic.</rdfs:comment>
-        <rdfs:label xml:lang="en">Confidence concept scheme</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ConveningOrganization -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#ConveningOrganization">
-        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-        <rdfs:comment xml:lang="en">A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions.</rdfs:comment>
-        <rdfs:label xml:lang="en">Convening organization</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/fr/def/core#ConfidenceConceptScheme"/>
-        <rdfs:comment xml:lang="en">A discrete scale defining the confidence of a reviewer for a given topic.</rdfs:comment>
-        <rdfs:label xml:lang="en">Discrete confidence concept scheme</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DiscreteRatingConceptScheme -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/fr/def/core#RatingConceptScheme"/>
-        <rdfs:comment xml:lang="en">A discrete scale defining the rating given by a reviewer for a specific scientific contribution.</rdfs:comment>
-        <rdfs:label xml:lang="en">Discrete rating concept scheme</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#RatingConcept -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#RatingConcept">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:comment xml:lang="en">The set of values of a given rating scale.</rdfs:comment>
-        <rdfs:label xml:lang="en">Rating concept</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#RatingConceptScheme -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#RatingConceptScheme">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdfs:comment xml:lang="en">A scale defining the rating given by a reviewer for a specific scientific contribution.</rdfs:comment>
-        <rdfs:label xml:lang="en">Rating concept scheme</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#Reply -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#Reply">
-        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Reply"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
-                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
-                <owl:someValuesFrom rdf:resource="http://lexvo.org/ontology#Language"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/modified"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A reply to a review or another endeavour.</rdfs:comment>
-        <rdfs:label xml:lang="en">Reply</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#Review -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#Review">
-        <rdfs:subClassOf rdf:resource="http://purl.org/spar/fabio/Review"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/creator"/>
-                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/language"/>
-                <owl:someValuesFrom rdf:resource="http://lexvo.org/ontology#Language"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/license"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/odrl/2/Policy"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/fr/def/core#isReviewOf"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/spar/fabio/Expression"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/dc/terms/modified"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A review of a scientific contribution.</rdfs:comment>
-        <rdfs:label xml:lang="en">Review</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#TrackingSystem -->
-
-
-    <owl:Class rdf:about="https://w3id.org/fr/def/core#TrackingSystem">
-        <rdfs:subClassOf rdf:resource="http://purl.org/spar/bido/ScholarlyVenueManagementSystem"/>
-        <rdfs:comment xml:lang="en">The platform where the review process takes place.</rdfs:comment>
-        <rdfs:label xml:lang="en">Tracking system</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -703,1021 +587,19 @@
     
 
 
-    <!-- https://w3id.org/fr/def/core# -->
+    <!-- http://purl.org/spar/fr -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#">
+    <owl:NamedIndividual rdf:about="http://purl.org/spar/fr">
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/fr/def/core#A-NA-WR -->
+    <!-- http://purl.org/spar/fr/ -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-NA-WR">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from Approved to Not Approved, including Aprproved With Reservations, </skos:definition>
-        <skos:prefLabel xml:lang="en">Approved to Not Approved</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-NA-WR-APP -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-NA-WR-APP">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-NA-WR"/>
-        <skos:definition xml:lang="en">Approved</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Approved</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-NA-WR-APPWR -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-NA-WR-APPWR">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MINREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-NA-WR"/>
-        <skos:definition xml:lang="en">Approved with reservations</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Approved with reservations</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-NA-WR-NAPP -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-NA-WR-NAPP">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-NA-WR"/>
-        <skos:definition xml:lang="en">Not approved</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Not approved</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from Accept to Reject, including pre-screening and two strikes rule</skos:definition>
-        <skos:prefLabel xml:lang="en">Accept to Reject, Two Strikes</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-ACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-ACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-MAJREV -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-MAJREV">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-BDL"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Major revision</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Major revision</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-MINREV -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-MINREV">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APPWR"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Minor revision</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minor revision</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-REJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-REJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-REJPS -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-REJPS">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Reject (Pre-Screening)</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reject (Pre-Screening)</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#A-R-TS-REJTS -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#A-R-TS-REJTS">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#A-R-TS"/>
-        <skos:definition xml:lang="en">Reject (Two Strikes)</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reject (Two Strikes)</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings</skos:definition>
-        <skos:prefLabel xml:lang="en">Discrete 1 to 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5-ACL1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5-ACL1">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-NULL"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</confidenceValue>
-        <skos:definition xml:lang="en">Not reviewer&apos;s area of expertise, or paper is very hard to understand. The evaluation is just an educated guess.</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5-ACL2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5-ACL2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-LOW"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</confidenceValue>
-        <skos:definition xml:lang="en">Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn&apos;t understand some central points, or can&apos;t be sure about the novelty of the work. </skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5-ACL3 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5-ACL3">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-MED"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</confidenceValue>
-        <skos:definition xml:lang="en">Reviewer is pretty sure, but there&apos;s a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper&apos;s details, e.g., the math, experimental design, or novelty. </skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5-ACL4 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5-ACL4">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-HIGH"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</confidenceValue>
-        <skos:definition xml:lang="en">Reviewer is quite sure, tried to check the important points carefully. It&apos;s unlikely, though conceivable, that he/she missed something that should affect his/her ratings. </skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#ACL-1-5-ACL5 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#ACL-1-5-ACL5">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-EXP"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#ACL-1-5"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</confidenceValue>
-        <skos:definition xml:lang="en">Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. </skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from 0 to 10</skos:definition>
-        <skos:prefLabel xml:lang="en">Discrete 0 to 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-0 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-0">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</ratingValue>
-        <skos:definition xml:lang="en">0 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-1">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ratingValue>
-        <skos:definition xml:lang="en">1 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-10 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-10">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</ratingValue>
-        <skos:definition xml:lang="en">10 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</ratingValue>
-        <skos:definition xml:lang="en">2 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-3 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-3">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ratingValue>
-        <skos:definition xml:lang="en">3 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-4 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-4">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</ratingValue>
-        <skos:definition xml:lang="en">4 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-5 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-5">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MAJREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-BDL"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</ratingValue>
-        <skos:definition xml:lang="en">5 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-6 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-6">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">6</ratingValue>
-        <skos:definition xml:lang="en">6 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-7 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-7">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</ratingValue>
-        <skos:definition xml:lang="en">7 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-8 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-8">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</ratingValue>
-        <skos:definition xml:lang="en">8 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-10-9 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-10-9">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-10"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">9</ratingValue>
-        <skos:definition xml:lang="en">9 out of 10</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9 out of 10</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from 0 to 5</skos:definition>
-        <skos:prefLabel xml:lang="en">Discrete 0 to 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-0 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-0">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</ratingValue>
-        <skos:definition xml:lang="en">0 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-1">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-REJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ratingValue>
-        <skos:definition xml:lang="en">1 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</ratingValue>
-        <skos:definition xml:lang="en">2 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-3 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-3">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APPWR"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MINREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ratingValue>
-        <skos:definition xml:lang="en">3 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-4 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-4">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-ACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</ratingValue>
-        <skos:definition xml:lang="en">4 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-0-5-5 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-0-5-5">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-0-5"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</ratingValue>
-        <skos:definition xml:lang="en">5 out of 5</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5 out of 5</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from -2 to 2, including 0</skos:definition>
-        <skos:prefLabel xml:lang="en">Discrete -2 to 2</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2-0 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2-0">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MAJREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-BDL"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</ratingValue>
-        <skos:definition xml:lang="en">0 on a [-2,2] scale</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0 on a [-2,2] scale</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2-NEG1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-REJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</ratingValue>
-        <skos:definition xml:lang="en">-1 on a [-2,2] scale</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-1 on a [-2,2] scale</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2-NEG2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-2</ratingValue>
-        <skos:definition xml:lang="en">-2 on a [-2,2] scale</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-2 on a [-2,2] scale</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2-POS1 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2-POS1">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-ACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ratingValue>
-        <skos:definition xml:lang="en">1 on a [-2,2] scale</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 on a [-2,2] scale</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#DIS-N2-P2-POS2 -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#DIS-N2-P2-POS2">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2"/>
-        <ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</ratingValue>
-        <skos:definition xml:lang="en">2 on a [-2,2] scale</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2 on a [-2,2] scale</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from Expert to Null, also representend in an scale from 4 to 0</skos:definition>
-        <skos:prefLabel xml:lang="en">Expert to Null</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL-EXP -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL-EXP">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-EXP"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#EX-NULL"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</confidenceValue>
-        <skos:definition xml:lang="en">Expert</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Expert</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL-HIGH -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL-HIGH">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-HIGH"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#EX-NULL"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</confidenceValue>
-        <skos:definition xml:lang="en">High</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL-LOW -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL-LOW">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-LOW"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#EX-NULL"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</confidenceValue>
-        <skos:definition xml:lang="en">Low</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL-MED -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL-MED">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-MED"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#EX-NULL"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</confidenceValue>
-        <skos:definition xml:lang="en">Medium</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#EX-NULL-NULL -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#EX-NULL-NULL">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#ConfidenceConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#ACL-1-5-ACL1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#EX-NULL-NULL"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#EX-NULL"/>
-        <confidenceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</confidenceValue>
-        <skos:definition xml:lang="en">Null</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Null</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from Strong Reject to Strong Accept, including Bordeline</skos:definition>
-        <skos:prefLabel xml:lang="en">St. Reject to St. Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-ACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-ACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-ACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-BDL -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-BDL">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MAJREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-0"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Borderline</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borderline</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-REJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-REJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-REJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-SACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-SACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Strong Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strong Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-SREJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-SREJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Strong Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strong Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-WACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-WACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APPWR"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MINREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Weak Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weak Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-BL-WREJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-BL-WREJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB-WREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL"/>
-        <skos:definition xml:lang="en">Weak Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weak Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#DiscreteRatingConceptScheme"/>
-        <skos:definition xml:lang="en">Discrete scale from Strong Reject to Strong Accept, excluding Bordeline</skos:definition>
-        <skos:prefLabel xml:lang="en">St. Reject to St. Accept, without Borderline</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-ACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-ACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-4"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-ACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-REJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-REJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG1"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-REJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-SACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-SACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-ACC"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-10"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-5"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-POS2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Strong Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strong Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-SREJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-SREJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-NAPP"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-REJ"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-10-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-0"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-N2-P2-NEG2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-SREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Strong Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strong Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-WACC -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-WACC">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-NA-WR-APPWR"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#A-R-TS-MINREV"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-3"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WACC"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Weak Accept</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weak Accept</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#SA-SR-NB-WREJ -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#SA-SR-NB-WREJ">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConcept"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#DIS-0-5-2"/>
-        <skos:closeMatch rdf:resource="https://w3id.org/fr/def/core#SA-SR-BL-WREJ"/>
-        <skos:inScheme rdf:resource="https://w3id.org/fr/def/core#SA-SR-NB"/>
-        <skos:definition xml:lang="en">Weak Reject</skos:definition>
-        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weak Reject</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#0To10Continuos -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#0To10Continuos">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConceptScheme"/>
-        <skos:prefLabel xml:lang="en">0 to 10 continuos</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#0To15Continuos -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#0To15Continuos">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConceptScheme"/>
-        <skos:prefLabel xml:lang="en">0 to 15 continuos</skos:prefLabel>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/fr/def/core#0To5Continuos -->
-
-
-    <owl:NamedIndividual rdf:about="https://w3id.org/fr/def/core#0To5Continuos">
-        <rdf:type rdf:resource="https://w3id.org/fr/def/core#RatingConceptScheme"/>
-        <skos:prefLabel xml:lang="en">0 to 5 continuos</skos:prefLabel>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://purl.org/spar/fr/"/>
 </rdf:RDF>
 
 
