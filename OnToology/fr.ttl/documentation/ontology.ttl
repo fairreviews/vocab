@@ -1,24 +1,25 @@
-@prefix : <https://w3id.org/fr/def/core##> .
+@prefix : <http://purl.org/spar/fr#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/fr/def/core#> .
+@base <http://purl.org/spar/fr> .
 
-<https://w3id.org/fr/def/core#> rdf:type owl:Ontology ;
-                                 owl:imports <http://purl.org/spar/datacite/> ;
-                                 <http://purl.org/dc/elements/1.1/creator> <https://w3id.org/people/idafensp> ,
-                                                                           <https://w3id.org/people/mpoveda> ;
-                                 <http://purl.org/dc/elements/1.1/publisher> <http://www.oeg-upm.net/> ;
-                                 <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en ;
-                                 <http://purl.org/dc/terms/created> "2017-09-01"^^xsd:date ;
-                                 <http://purl.org/dc/terms/issued> "2017-11-07"^^xsd:date ;
-                                 <http://purl.org/dc/terms/modified> "2017-11-03"^^xsd:date ;
-                                 <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^xsd:date ;
-                                 <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/fr/def/core#"^^xsd:string ;
-                                 rdfs:comment "This vocabulary represents scientific reviews. This model is used to annotate http://fairreviews.linkeddata.es/ data."@en ;
-                                 owl:versionInfo "0.1.0"^^xsd:string .
+<http://purl.org/spar/fr> rdf:type owl:Ontology ;
+                           owl:imports <http://purl.org/spar/datacite/> ;
+                           <http://purl.org/dc/elements/1.1/creator> <https://w3id.org/people/idafensp> ,
+                                                                     <https://w3id.org/people/mpoveda> ;
+                           <http://purl.org/dc/elements/1.1/publisher> <http://www.oeg-upm.net/> ;
+                           <http://purl.org/dc/elements/1.1/title> "FAIR reviews ontology"@en ;
+                           <http://purl.org/dc/terms/created> "2017-09-01"^^xsd:date ;
+                           <http://purl.org/dc/terms/issued> "2017-11-07"^^xsd:date ;
+                           <http://purl.org/dc/terms/modified> "2017-11-03"^^xsd:date ;
+                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "fr"^^xsd:date ;
+                           <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/spar/fr/"^^xsd:string ;
+                           rdfs:comment "This vocabulary represents scientific reviews. This model is used to annotate http://fairreviews.linkeddata.es/ data."@en ;
+                           owl:priorVersion <https://w3id.org/fr/def/core#> ;
+                           owl:versionInfo "1.0"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -102,87 +103,60 @@ xsd:date rdf:type rdfs:Datatype .
 <http://purl.org/dc/terms/license> rdf:type owl:ObjectProperty .
 
 
+###  http://purl.org/spar/fr/hasRating
+<http://purl.org/spar/fr/hasRating> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                    rdfs:range <http://purl.org/spar/fr/RatingConcept> ;
+                                    rdfs:comment "The relation between a review and a given rating assigned by a reviewer."@en ;
+                                    rdfs:label "has rating"@en .
+
+
+###  http://purl.org/spar/fr/hasReviewerConfidence
+<http://purl.org/spar/fr/hasReviewerConfidence> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                                rdfs:range <http://purl.org/spar/fr/ConfidenceConcept> ;
+                                                rdfs:comment "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution."^^xsd:string ;
+                                                rdfs:label "has reviewer confidence"@en .
+
+
+###  http://purl.org/spar/fr/hasSubReviewer
+<http://purl.org/spar/fr/hasSubReviewer> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                         rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                         rdfs:label "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en ,
+                                                    "has sub-reviewer"@en .
+
+
+###  http://purl.org/spar/fr/issuedAt
+<http://purl.org/spar/fr/issuedAt> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                   rdfs:range <http://purl.org/spar/fr/TrackingSystem> ;
+                                   rdfs:comment "The relation between a review and the tracking or scholarly venue management system where the reviewing process took place."@en ;
+                                   rdfs:label "issued at"@en .
+
+
+###  http://purl.org/spar/fr/issuedFor
+<http://purl.org/spar/fr/issuedFor> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                    rdfs:range <http://purl.org/spar/fr/ConveningOrganization> ;
+                                    rdfs:comment "The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review)."@en ;
+                                    rdfs:label "issued for"@en .
+
+
+###  http://purl.org/spar/fr/releasedBy
+<http://purl.org/spar/fr/releasedBy> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://purl.org/spar/fabio/Review> ;
+                                     rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+                                     rdfs:comment "The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to."@en ;
+                                     rdfs:label "released by"@en .
+
+
 ###  http://www.w3.org/2004/02/skos/core#closeMatch
 <http://www.w3.org/2004/02/skos/core#closeMatch> rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#inScheme
 <http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/fr/def/core#hasRating
-<https://w3id.org/fr/def/core#hasRating> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                         rdfs:range <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         rdfs:comment "The relation between a review and a given rating assigned by a reviewer."@en ;
-                                         rdfs:label "has rating"@en .
-
-
-###  https://w3id.org/fr/def/core#hasReview
-<https://w3id.org/fr/def/core#hasReview> rdf:type owl:ObjectProperty ;
-                                         owl:inverseOf <https://w3id.org/fr/def/core#isReviewOf> ;
-                                         rdf:type owl:InverseFunctionalProperty ;
-                                         rdfs:domain <http://purl.org/spar/fabio/Expression> ;
-                                         rdfs:range <https://w3id.org/fr/def/core#Review> ;
-                                         rdfs:comment "Relation between a scientific contribution and the reviews issued for it."@en ;
-                                         rdfs:label "has review"@en .
-
-
-###  https://w3id.org/fr/def/core#hasReviewerConfidence
-<https://w3id.org/fr/def/core#hasReviewerConfidence> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                                     rdfs:range <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                                     rdfs:comment "Relation between a review the confidence set by the author about the review topic. As the review can be written only by one author the confidence is assumed to be for such author about the given paper without need of creating a new class involving the three actors in a n-ary alike solution."^^xsd:string ;
-                                                     rdfs:label "has reviewer confidence"@en .
-
-
-###  https://w3id.org/fr/def/core#hasSubReviewer
-<https://w3id.org/fr/def/core#hasSubReviewer> rdf:type owl:ObjectProperty ;
-                                              rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                              rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
-                                              rdfs:label "The relation between a review and agents that have contributed to the overall review as sub-reviwers."@en ,
-                                                         "has sub-reviewer"@en .
-
-
-###  https://w3id.org/fr/def/core#isReplyTo
-<https://w3id.org/fr/def/core#isReplyTo> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <http://purl.org/spar/fabio/Endeavour> ;
-                                         rdfs:range <http://purl.org/spar/fabio/Endeavour> ;
-                                         rdfs:comment "The relation between a given endeavour and the endeavour that it is replying to. For example, the relation between a reply and a given review."@en ;
-                                         rdfs:label "is reply to"@en .
-
-
-###  https://w3id.org/fr/def/core#isReviewOf
-<https://w3id.org/fr/def/core#isReviewOf> rdf:type owl:ObjectProperty ,
-                                                   owl:FunctionalProperty ;
-                                          rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                          rdfs:range <http://purl.org/spar/fabio/Expression> ;
-                                          rdfs:comment "The relation between a review and the scientific contribution that is subject of the review."@en ;
-                                          rdfs:label "is review of"@en .
-
-
-###  https://w3id.org/fr/def/core#issuedAt
-<https://w3id.org/fr/def/core#issuedAt> rdf:type owl:ObjectProperty ;
-                                        rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                        rdfs:range <https://w3id.org/fr/def/core#TrackingSystem> ;
-                                        rdfs:comment "The relation between a review and the tracking or scholarly venue management system where the reviewing process took place."@en ;
-                                        rdfs:label "issued at"@en .
-
-
-###  https://w3id.org/fr/def/core#issuedFor
-<https://w3id.org/fr/def/core#issuedFor> rdf:type owl:ObjectProperty ;
-                                         rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                         rdfs:range <https://w3id.org/fr/def/core#ConveningOrganization> ;
-                                         rdfs:comment "The realation between a review and the entity (e.g. conference, journal) that it was issued for (usually the one that requested the review)."@en ;
-                                         rdfs:label "issued for"@en .
-
-
-###  https://w3id.org/fr/def/core#releasedBy
-<https://w3id.org/fr/def/core#releasedBy> rdf:type owl:ObjectProperty ;
-                                          rdfs:domain <https://w3id.org/fr/def/core#Review> ;
-                                          rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
-                                          rdfs:comment "The relation between the review and the agent publishing it. It might be the the author of the review or conference or journal to which the scientific resource was submitted to."@en ;
-                                          rdfs:label "released by"@en .
 
 
 #################################################################
@@ -203,28 +177,20 @@ xsd:date rdf:type rdfs:Datatype .
                                     rdfs:range xsd:anyURI .
 
 
-###  https://w3id.org/fr/def/core#confidenceValue
-<https://w3id.org/fr/def/core#confidenceValue> rdf:type owl:DatatypeProperty ;
-                                               rdfs:domain <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                               rdfs:range rdfs:Literal ;
-                                               rdfs:comment "Confidence value of expertise in the review topic given by the reviwer"@en ;
-                                               rdfs:label "confidence value"@en .
+###  http://purl.org/spar/fr/confidenceValue
+<http://purl.org/spar/fr/confidenceValue> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://purl.org/spar/fr/ConfidenceConcept> ;
+                                          rdfs:range rdfs:Literal ;
+                                          rdfs:comment "Confidence value of expertise in the review topic given by the reviwer"@en ;
+                                          rdfs:label "confidence value"@en .
 
 
-###  https://w3id.org/fr/def/core#content
-<https://w3id.org/fr/def/core#content> rdf:type owl:DatatypeProperty ;
-                                       rdfs:domain <http://purl.org/spar/fabio/Work> ;
-                                       rdfs:range rdfs:Literal ;
-                                       rdfs:comment "Content of the review."@en ;
-                                       rdfs:label "content"@en .
-
-
-###  https://w3id.org/fr/def/core#ratingValue
-<https://w3id.org/fr/def/core#ratingValue> rdf:type owl:DatatypeProperty ;
-                                           rdfs:domain <https://w3id.org/fr/def/core#RatingConcept> ;
-                                           rdfs:range rdfs:Literal ;
-                                           rdfs:comment "Numerical value of the rating given to a review."@en ;
-                                           rdfs:label "rating value"@en .
+###  http://purl.org/spar/fr/ratingValue
+<http://purl.org/spar/fr/ratingValue> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://purl.org/spar/fr/RatingConcept> ;
+                                      rdfs:range rdfs:Literal ;
+                                      rdfs:comment "Numerical value of the rating given to a review."@en ;
+                                      rdfs:label "rating value"@en .
 
 
 #################################################################
@@ -251,6 +217,10 @@ xsd:date rdf:type rdfs:Datatype .
                                            rdfs:label "identificador"@es .
 
 
+###  http://purl.org/spar/fabio/Comment
+<http://purl.org/spar/fabio/Comment> rdf:type owl:Class .
+
+
 ###  http://purl.org/spar/fabio/Endeavour
 <http://purl.org/spar/fabio/Endeavour> rdf:type owl:Class .
 
@@ -273,6 +243,69 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/spar/fabio/Work
 <http://purl.org/spar/fabio/Work> rdf:type owl:Class ;
                                   rdfs:subClassOf <http://purl.org/spar/fabio/Endeavour> .
+
+
+###  http://purl.org/spar/fr/ConfidenceConcept
+<http://purl.org/spar/fr/ConfidenceConcept> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                            rdfs:comment "The set of values of a given confidence scale."@en ;
+                                            rdfs:label "Confidence concept"@en .
+
+
+###  http://purl.org/spar/fr/ConfidenceConceptScheme
+<http://purl.org/spar/fr/ConfidenceConceptScheme> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                                                  rdfs:comment "A scale defining the confidence of a reviewer for a given topic."@en ;
+                                                  rdfs:label "Confidence concept scheme"@en .
+
+
+###  http://purl.org/spar/fr/ConveningOrganization
+<http://purl.org/spar/fr/ConveningOrganization> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+                                                rdfs:comment "A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions."@en ;
+                                                rdfs:label "Convening organization"@en .
+
+
+###  http://purl.org/spar/fr/DiscreteConfidenceConceptScheme
+<http://purl.org/spar/fr/DiscreteConfidenceConceptScheme> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://purl.org/spar/fr/ConfidenceConceptScheme> ;
+                                                          rdfs:comment "A discrete scale defining the confidence of a reviewer for a given topic."@en ;
+                                                          rdfs:label "Discrete confidence concept scheme"@en .
+
+
+###  http://purl.org/spar/fr/DiscreteRatingConceptScheme
+<http://purl.org/spar/fr/DiscreteRatingConceptScheme> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://purl.org/spar/fr/RatingConceptScheme> ;
+                                                      rdfs:comment "A discrete scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
+                                                      rdfs:label "Discrete rating concept scheme"@en .
+
+
+###  http://purl.org/spar/fr/RatingConcept
+<http://purl.org/spar/fr/RatingConcept> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                        rdfs:comment "The set of values of a given rating scale."@en ;
+                                        rdfs:label "Rating concept"@en .
+
+
+###  http://purl.org/spar/fr/RatingConceptScheme
+<http://purl.org/spar/fr/RatingConceptScheme> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                                              rdfs:comment "A scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
+                                              rdfs:label "Rating concept scheme"@en .
+
+
+###  http://purl.org/spar/fr/ReviewVersion
+<http://purl.org/spar/fr/ReviewVersion> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/spar/fabio/Comment> ;
+                                        rdfs:comment "A version of a given review, defining its content and rating, which may vary over the time ."@en ;
+                                        rdfs:label "Review Version"@en .
+
+
+###  http://purl.org/spar/fr/TrackingSystem
+<http://purl.org/spar/fr/TrackingSystem> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://purl.org/spar/bido/ScholarlyVenueManagementSystem> ;
+                                         rdfs:comment "The platform where the review process takes place."@en ;
+                                         rdfs:label "Tracking system"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -300,117 +333,6 @@ xsd:date rdf:type rdfs:Datatype .
                                    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
 
 
-###  https://w3id.org/fr/def/core#ConfidenceConcept
-<https://w3id.org/fr/def/core#ConfidenceConcept> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-                                                 rdfs:comment "The set of values of a given confidence scale."@en ;
-                                                 rdfs:label "Confidence concept"@en .
-
-
-###  https://w3id.org/fr/def/core#ConfidenceConceptScheme
-<https://w3id.org/fr/def/core#ConfidenceConceptScheme> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
-                                                       rdfs:comment "A scale defining the confidence of a reviewer for a given topic."@en ;
-                                                       rdfs:label "Confidence concept scheme"@en .
-
-
-###  https://w3id.org/fr/def/core#ConveningOrganization
-<https://w3id.org/fr/def/core#ConveningOrganization> rdf:type owl:Class ;
-                                                     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-                                                     rdfs:comment "A venue (e.g. conference, workshop), a expression collection (e.g. journal, special issue), or an individual agent (e.g. organization, researcher) collecting scientific contributions."@en ;
-                                                     rdfs:label "Convening organization"@en .
-
-
-###  https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme
-<https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> rdf:type owl:Class ;
-                                                               rdfs:subClassOf <https://w3id.org/fr/def/core#ConfidenceConceptScheme> ;
-                                                               rdfs:comment "A discrete scale defining the confidence of a reviewer for a given topic."@en ;
-                                                               rdfs:label "Discrete confidence concept scheme"@en .
-
-
-###  https://w3id.org/fr/def/core#DiscreteRatingConceptScheme
-<https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <https://w3id.org/fr/def/core#RatingConceptScheme> ;
-                                                           rdfs:comment "A discrete scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
-                                                           rdfs:label "Discrete rating concept scheme"@en .
-
-
-###  https://w3id.org/fr/def/core#RatingConcept
-<https://w3id.org/fr/def/core#RatingConcept> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-                                             rdfs:comment "The set of values of a given rating scale."@en ;
-                                             rdfs:label "Rating concept"@en .
-
-
-###  https://w3id.org/fr/def/core#RatingConceptScheme
-<https://w3id.org/fr/def/core#RatingConceptScheme> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
-                                                   rdfs:comment "A scale defining the rating given by a reviewer for a specific scientific contribution."@en ;
-                                                   rdfs:label "Rating concept scheme"@en .
-
-
-###  https://w3id.org/fr/def/core#Reply
-<https://w3id.org/fr/def/core#Reply> rdf:type owl:Class ;
-                                     rdfs:subClassOf <http://purl.org/spar/fabio/Reply> ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://purl.org/dc/terms/creator> ;
-                                                       owl:someValuesFrom <http://xmlns.com/foaf/0.1/Agent>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://purl.org/dc/terms/language> ;
-                                                       owl:someValuesFrom <http://lexvo.org/ontology#Language>
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://purl.org/dc/terms/issued> ;
-                                                       owl:someValuesFrom xsd:date
-                                                     ] ,
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty <http://purl.org/dc/terms/modified> ;
-                                                       owl:someValuesFrom xsd:date
-                                                     ] ;
-                                     rdfs:comment "A reply to a review or another endeavour."@en ;
-                                     rdfs:label "Reply"@en .
-
-
-###  https://w3id.org/fr/def/core#Review
-<https://w3id.org/fr/def/core#Review> rdf:type owl:Class ;
-                                      rdfs:subClassOf <http://purl.org/spar/fabio/Review> ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://purl.org/dc/terms/creator> ;
-                                                        owl:someValuesFrom <http://xmlns.com/foaf/0.1/Agent>
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://purl.org/dc/terms/language> ;
-                                                        owl:someValuesFrom <http://lexvo.org/ontology#Language>
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://purl.org/dc/terms/license> ;
-                                                        owl:someValuesFrom <http://www.w3.org/ns/odrl/2/Policy>
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <https://w3id.org/fr/def/core#isReviewOf> ;
-                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                        owl:onClass <http://purl.org/spar/fabio/Expression>
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://purl.org/dc/terms/issued> ;
-                                                        owl:someValuesFrom xsd:date
-                                                      ] ,
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty <http://purl.org/dc/terms/modified> ;
-                                                        owl:someValuesFrom xsd:date
-                                                      ] ;
-                                      rdfs:comment "A review of a scientific contribution."@en ;
-                                      rdfs:label "Review"@en .
-
-
-###  https://w3id.org/fr/def/core#TrackingSystem
-<https://w3id.org/fr/def/core#TrackingSystem> rdf:type owl:Class ;
-                                              rdfs:subClassOf <http://purl.org/spar/bido/ScholarlyVenueManagementSystem> ;
-                                              rdfs:comment "The platform where the review process takes place."@en ;
-                                              rdfs:label "Tracking system"@en .
-
-
 #################################################################
 #    Individuals
 #################################################################
@@ -419,754 +341,13 @@ xsd:date rdf:type rdfs:Datatype .
 <http://purl.org/NET/rdflicense/cc-by4.0> rdf:type owl:NamedIndividual .
 
 
-###  https://w3id.org/fr/def/core#
-<https://w3id.org/fr/def/core#> rdf:type owl:NamedIndividual ;
-                                <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
+###  http://purl.org/spar/fr
+<http://purl.org/spar/fr> rdf:type owl:NamedIndividual ;
+                          <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 
 
-###  https://w3id.org/fr/def/core#A-NA-WR
-<https://w3id.org/fr/def/core#A-NA-WR> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Approved to Not Approved, including Aprproved With Reservations, "@en ;
-                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved to Not Approved"@en .
-
-
-###  https://w3id.org/fr/def/core#A-NA-WR-APP
-<https://w3id.org/fr/def/core#A-NA-WR-APP> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-4> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "Approved"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-NA-WR-APPWR
-<https://w3id.org/fr/def/core#A-NA-WR-APPWR> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Approved with reservations"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Approved with reservations"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-NA-WR-NAPP
-<https://w3id.org/fr/def/core#A-NA-WR-NAPP> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-NA-WR> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Not approved"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Not approved"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS
-<https://w3id.org/fr/def/core#A-R-TS> rdf:type owl:NamedIndividual ,
-                                               <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                      <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Accept to Reject, including pre-screening and two strikes rule"@en ;
-                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept to Reject, Two Strikes"@en .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-ACC
-<https://w3id.org/fr/def/core#A-R-TS-ACC> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-4> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-MAJREV
-<https://w3id.org/fr/def/core#A-R-TS-MAJREV> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-10-5> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-0> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Major revision"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Major revision"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-MINREV
-<https://w3id.org/fr/def/core#A-R-TS-MINREV> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Minor revision"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Minor revision"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-REJ
-<https://w3id.org/fr/def/core#A-R-TS-REJ> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-1> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-REJPS
-<https://w3id.org/fr/def/core#A-R-TS-REJPS> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reject (Pre-Screening)"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Pre-Screening)"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#A-R-TS-REJTS
-<https://w3id.org/fr/def/core#A-R-TS-REJTS> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#A-R-TS> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reject (Two Strikes)"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject (Two Strikes)"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5
-<https://w3id.org/fr/def/core#ACL-1-5> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 1 to 5, used by Association for Computational Linguistics annual meetings"@en ;
-                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 1 to 5"@en .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5-ACL1
-<https://w3id.org/fr/def/core#ACL-1-5-ACL1> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL1> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-NULL> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Not reviewer's area of expertise, or paper is very hard to understand. The evaluation is just an educated guess."@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5-ACL2
-<https://w3id.org/fr/def/core#ACL-1-5-ACL2> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL2> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-LOW> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "2"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reviewers is willing to defend my evaluation, but it is fairly likely that he/she missed some details, didn't understand some central points, or can't be sure about the novelty of the work. "@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5-ACL3
-<https://w3id.org/fr/def/core#ACL-1-5-ACL3> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL3> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-MED> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "3"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is pretty sure, but there's a chance he/she missed something. Although she/he has a good feel for this area in general, she/he did not carefully check the paper's details, e.g., the math, experimental design, or novelty. "@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5-ACL4
-<https://w3id.org/fr/def/core#ACL-1-5-ACL4> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL4> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-HIGH> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "4"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is quite sure, tried to check the important points carefully. It's unlikely, though conceivable, that he/she missed something that should affect his/her ratings. "@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#ACL-1-5-ACL5
-<https://w3id.org/fr/def/core#ACL-1-5-ACL5> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL5> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-EXP> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#ACL-1-5> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "5"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reviewer is positive that the evaluation is correct, has read the paper very carefully and is familiar with related work. "@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10
-<https://w3id.org/fr/def/core#DIS-0-10> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                        <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 0 to 10"@en ;
-                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 0 to 10"@en .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-0
-<https://w3id.org/fr/def/core#DIS-0-10-0> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                           <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "0 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-1
-<https://w3id.org/fr/def/core#DIS-0-10-1> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "1"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "1 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-10
-<https://w3id.org/fr/def/core#DIS-0-10-10> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                            <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                           <https://w3id.org/fr/def/core#ratingValue> "10"^^xsd:int ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "10 out of 10"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "10 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-2
-<https://w3id.org/fr/def/core#DIS-0-10-2> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "2"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "2 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-3
-<https://w3id.org/fr/def/core#DIS-0-10-3> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "3"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "3 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-4
-<https://w3id.org/fr/def/core#DIS-0-10-4> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "4"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "4 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-5
-<https://w3id.org/fr/def/core#DIS-0-10-5> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
-                                                                                           <https://w3id.org/fr/def/core#DIS-N2-P2-0> ,
-                                                                                           <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "5"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "5 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-6
-<https://w3id.org/fr/def/core#DIS-0-10-6> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "6"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "6 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "6 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-7
-<https://w3id.org/fr/def/core#DIS-0-10-7> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "7"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "7 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "7 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-8
-<https://w3id.org/fr/def/core#DIS-0-10-8> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "8"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "8 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "8 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-10-9
-<https://w3id.org/fr/def/core#DIS-0-10-9> rdf:type owl:NamedIndividual ,
-                                                   <https://w3id.org/fr/def/core#RatingConcept> ;
-                                          <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-10> ;
-                                          <https://w3id.org/fr/def/core#ratingValue> "9"^^xsd:int ;
-                                          <http://www.w3.org/2004/02/skos/core#definition> "9 out of 10"@en ;
-                                          <http://www.w3.org/2004/02/skos/core#prefLabel> "9 out of 10"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5
-<https://w3id.org/fr/def/core#DIS-0-5> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from 0 to 5"@en ;
-                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete 0 to 5"@en .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-0
-<https://w3id.org/fr/def/core#DIS-0-5-0> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                          <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "0 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "0 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-1
-<https://w3id.org/fr/def/core#DIS-0-5-1> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                          <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "1"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "1 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "1 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-2
-<https://w3id.org/fr/def/core#DIS-0-5-2> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#SA-SR-BL-WREJ> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-WREJ> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "2"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "2 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "2 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-3
-<https://w3id.org/fr/def/core#DIS-0-5-3> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
-                                                                                          <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "3"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "3 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "3 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-4
-<https://w3id.org/fr/def/core#DIS-0-5-4> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                          <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "4"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "4 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "4 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-0-5-5
-<https://w3id.org/fr/def/core#DIS-0-5-5> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#RatingConcept> ;
-                                         <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                          <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                          <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
-                                                                                          <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                         <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-0-5> ;
-                                         <https://w3id.org/fr/def/core#ratingValue> "5"^^xsd:int ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "5 out of 5"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "5 out of 5"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2
-<https://w3id.org/fr/def/core#DIS-N2-P2> rdf:type owl:NamedIndividual ,
-                                                  <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                         <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from -2 to 2, including 0"@en ;
-                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Discrete -2 to 2"@en .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2-0
-<https://w3id.org/fr/def/core#DIS-N2-P2-0> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#RatingConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
-                                                                                            <https://w3id.org/fr/def/core#DIS-0-10-5> ,
-                                                                                            <https://w3id.org/fr/def/core#SA-SR-BL-BDL> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
-                                           <https://w3id.org/fr/def/core#ratingValue> "0"^^xsd:int ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "0 on a [-2,2] scale"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "0 on a [-2,2] scale"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2-NEG1
-<https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
-                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                               <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-1> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
-                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
-                                              <https://w3id.org/fr/def/core#ratingValue> "-1"^^xsd:int ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "-1 on a [-2,2] scale"@en ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "-1 on a [-2,2] scale"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2-NEG2
-<https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
-                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                               <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
-                                              <https://w3id.org/fr/def/core#ratingValue> "-2"^^xsd:int ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "-2 on a [-2,2] scale"@en ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "-2 on a [-2,2] scale"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2-POS1
-<https://w3id.org/fr/def/core#DIS-N2-P2-POS1> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
-                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                               <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-4> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
-                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
-                                              <https://w3id.org/fr/def/core#ratingValue> "1"^^xsd:int ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "1 on a [-2,2] scale"@en ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "1 on a [-2,2] scale"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#DIS-N2-P2-POS2
-<https://w3id.org/fr/def/core#DIS-N2-P2-POS2> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConcept> ;
-                                              <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                               <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                               <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ,
-                                                                                               <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                              <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#DIS-N2-P2> ;
-                                              <https://w3id.org/fr/def/core#ratingValue> "2"^^xsd:int ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "2 on a [-2,2] scale"@en ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "2 on a [-2,2] scale"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL
-<https://w3id.org/fr/def/core#EX-NULL> rdf:type owl:NamedIndividual ,
-                                                <https://w3id.org/fr/def/core#DiscreteConfidenceConceptScheme> ;
-                                       <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Expert to Null, also representend in an scale from 4 to 0"@en ;
-                                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Expert to Null"@en .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL-EXP
-<https://w3id.org/fr/def/core#EX-NULL-EXP> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL5> ,
-                                                                                            <https://w3id.org/fr/def/core#EX-NULL-EXP> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
-                                           <https://w3id.org/fr/def/core#confidenceValue> "4"^^xsd:int ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "Expert"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Expert"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL-HIGH
-<https://w3id.org/fr/def/core#EX-NULL-HIGH> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL4> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-HIGH> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "3"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "High"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "High"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL-LOW
-<https://w3id.org/fr/def/core#EX-NULL-LOW> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL2> ,
-                                                                                            <https://w3id.org/fr/def/core#EX-NULL-LOW> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
-                                           <https://w3id.org/fr/def/core#confidenceValue> "1"^^xsd:int ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "Low"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Low"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL-MED
-<https://w3id.org/fr/def/core#EX-NULL-MED> rdf:type owl:NamedIndividual ,
-                                                    <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                           <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL3> ,
-                                                                                            <https://w3id.org/fr/def/core#EX-NULL-MED> ;
-                                           <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
-                                           <https://w3id.org/fr/def/core#confidenceValue> "2"^^xsd:int ;
-                                           <http://www.w3.org/2004/02/skos/core#definition> "Medium"@en ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Medium"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#EX-NULL-NULL
-<https://w3id.org/fr/def/core#EX-NULL-NULL> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#ConfidenceConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#ACL-1-5-ACL1> ,
-                                                                                             <https://w3id.org/fr/def/core#EX-NULL-NULL> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#EX-NULL> ;
-                                            <https://w3id.org/fr/def/core#confidenceValue> "0"^^xsd:int ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Null"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Null"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL
-<https://w3id.org/fr/def/core#SA-SR-BL> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                        <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Strong Reject to Strong Accept, including Bordeline"@en ;
-                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "St. Reject to St. Accept"@en .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-ACC
-<https://w3id.org/fr/def/core#SA-SR-BL-ACC> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                             <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-4> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-ACC> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-BDL
-<https://w3id.org/fr/def/core#SA-SR-BL-BDL> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-R-TS-MAJREV> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-5> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-0> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Borderline"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Borderline"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-REJ
-<https://w3id.org/fr/def/core#SA-SR-BL-REJ> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                             <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-NB-REJ> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-SACC
-<https://w3id.org/fr/def/core#SA-SR-BL-SACC> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-SACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-SREJ
-<https://w3id.org/fr/def/core#SA-SR-BL-SREJ> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-SREJ> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-WACC
-<https://w3id.org/fr/def/core#SA-SR-BL-WACC> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-BL-WREJ
-<https://w3id.org/fr/def/core#SA-SR-BL-WREJ> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-5-2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-NB-WREJ> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-BL> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB
-<https://w3id.org/fr/def/core#SA-SR-NB> rdf:type owl:NamedIndividual ,
-                                                 <https://w3id.org/fr/def/core#DiscreteRatingConceptScheme> ;
-                                        <http://www.w3.org/2004/02/skos/core#definition> "Discrete scale from Strong Reject to Strong Accept, excluding Bordeline"@en ;
-                                        <http://www.w3.org/2004/02/skos/core#prefLabel> "St. Reject to St. Accept, without Borderline"@en .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-ACC
-<https://w3id.org/fr/def/core#SA-SR-NB-ACC> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                             <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-4> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-POS1> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-ACC> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Accept"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-REJ
-<https://w3id.org/fr/def/core#SA-SR-NB-REJ> rdf:type owl:NamedIndividual ,
-                                                     <https://w3id.org/fr/def/core#RatingConcept> ;
-                                            <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                             <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-0-5-1> ,
-                                                                                             <https://w3id.org/fr/def/core#DIS-N2-P2-NEG1> ,
-                                                                                             <https://w3id.org/fr/def/core#SA-SR-BL-REJ> ;
-                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                            <http://www.w3.org/2004/02/skos/core#definition> "Reject"@en ;
-                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-SACC
-<https://w3id.org/fr/def/core#SA-SR-NB-SACC> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APP> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-ACC> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-10> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-5> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-POS2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-SACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Strong Accept"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-SREJ
-<https://w3id.org/fr/def/core#SA-SR-NB-SREJ> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-NAPP> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-REJ> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-10-0> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-0> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-N2-P2-NEG2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-SREJ> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Strong Reject"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Strong Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-WACC
-<https://w3id.org/fr/def/core#SA-SR-NB-WACC> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#A-NA-WR-APPWR> ,
-                                                                                              <https://w3id.org/fr/def/core#A-R-TS-MINREV> ,
-                                                                                              <https://w3id.org/fr/def/core#DIS-0-5-3> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WACC> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Weak Accept"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Accept"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#SA-SR-NB-WREJ
-<https://w3id.org/fr/def/core#SA-SR-NB-WREJ> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConcept> ;
-                                             <http://www.w3.org/2004/02/skos/core#closeMatch> <https://w3id.org/fr/def/core#DIS-0-5-2> ,
-                                                                                              <https://w3id.org/fr/def/core#SA-SR-BL-WREJ> ;
-                                             <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/fr/def/core#SA-SR-NB> ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "Weak Reject"@en ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "Weak Reject"^^xsd:string .
-
-
-###  https://w3id.org/fr/def/core#0To10Continuos
-<https://w3id.org/fr/def/core#0To10Continuos> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConceptScheme> ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 10 continuos"@en .
-
-
-###  https://w3id.org/fr/def/core#0To15Continuos
-<https://w3id.org/fr/def/core#0To15Continuos> rdf:type owl:NamedIndividual ,
-                                                       <https://w3id.org/fr/def/core#RatingConceptScheme> ;
-                                              <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 15 continuos"@en .
-
-
-###  https://w3id.org/fr/def/core#0To5Continuos
-<https://w3id.org/fr/def/core#0To5Continuos> rdf:type owl:NamedIndividual ,
-                                                      <https://w3id.org/fr/def/core#RatingConceptScheme> ;
-                                             <http://www.w3.org/2004/02/skos/core#prefLabel> "0 to 5 continuos"@en .
+###  http://purl.org/spar/fr/
+<http://purl.org/spar/fr/> rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
